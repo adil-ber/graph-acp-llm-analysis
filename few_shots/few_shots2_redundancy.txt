@@ -1,0 +1,22 @@
+Example Input:
+C1: x = 1
+C2: x != 1 AND y = 2  
+C3: x = 1 AND y = 2  
+C4: A > 10  
+C5: A > 5  
+C6: role = 'admin'  
+C7: role = 'admin' OR role = 'user'  
+C8: score = 90  
+C9: score >= 80  
+C10: temperature > 30  
+C11: temperature > 25
+C12: disable = true
+
+Example Output:
+{
+  "C1": "(redundant/included in C3)",
+  "C4": "(redundant/included in C5)",
+  "C6": "(redundant/included in C7)",
+  "C8": "(redundant/included in C9)",
+  "C10": "(redundant/included in C11)",
+}

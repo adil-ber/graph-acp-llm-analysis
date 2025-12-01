@@ -1,0 +1,73 @@
+
+-------- deepseek/deepseek-chat-v3-0324 ---------
+   policy1,  prec: 63.16,  rec: 25.53,  f1: 36.36,  acc: 22.22
+   relev,  prec: 63.16,  rec: 25.53,  f1: 36.36,  acc: 22.22
+
+-------- deepseek/deepseek-chat-v3.1 ---------
+   policy1,  prec: 50.0,  rec: 8.51,  f1: 14.55,  acc: 7.84
+   relev,  prec: 50.0,  rec: 8.51,  f1: 14.55,  acc: 7.84
+
+-------- qwen/qwen3-next-80b-a3b-instruct ---------
+   policy1,  prec: 40.0,  rec: 72.34,  f1: 51.52,  acc: 34.69
+   relev,  prec: 40.0,  rec: 72.34,  f1: 51.52,  acc: 34.69
+
+-------- qwen/qwen3-235b-a22b-2507 ---------
+   policy1,  prec: 83.33,  rec: 42.55,  f1: 56.34,  acc: 39.22
+   relev,  prec: 83.33,  rec: 42.55,  f1: 56.34,  acc: 39.22
+
+-------- google/gemini-2.5-flash-preview-09-2025 ---------
+   policy1,  prec: 83.72,  rec: 76.6,  f1: 80.0,  acc: 66.67
+   policy2,  prec: 100.0,  rec: 90.62,  f1: 95.08,  acc: 90.62
+   policy3,  prec: 100.0,  rec: 100.0,  f1: 100.0,  acc: 100.0
+  policy4,  prec: 100.0,  rec: 98.11,  f1: 99.05,  acc: 98.11
+   policy1234,  prec: 98.65,  rec: 97.33,  f1: 97.99,  acc: 96.05
+   relev,  prec: 96.47,  rec: 92.53,  f1: 90.82,  acc: 100.0
+
+
+-------- google/gemini-2.5-flash ---------
+   policy1234,  prec: 91.8,  rec: 100.0,  f1: 95.73,  acc: 91.8
+   la,  prec: 91.8,  rec: 100.0,  f1: 95.73,  acc: 91.8
+
+-------- google/gemini-2.5-flash ---------
+   policy1234,  prec: 76.11,  rec: 89.58,  f1: 82.3,  acc: 69.92
+   consist,  prec: 76.11,  rec: 89.58,  f1: 82.3,  acc: 69.92
+
+-------- google/gemini-2.5-flash ---------
+   policy1,  prec: 86.67,  rec: 98.91,  f1: 92.39,  acc: 85.85
+   policy2,  prec: 86.96,  rec: 95.24,  f1: 90.91,  acc: 83.33
+   policy3,  prec: 96.67,  rec: 100.0,  f1: 98.31,  acc: 96.67
+   policy4,  prec: 100.0,  rec: 83.72,  f1: 91.14,  acc: 83.72
+    policy1234,  prec: 91.8,  rec: 100.0,  f1: 95.73,  acc: 91.8
+   la,  prec: 92.42,  rec: 95.57,  f1: 93.69,  acc: 87.39250000000001
+
+-------- google/gemini-2.5-flash ---------
+   policy1234,  prec: 76.11,  rec: 89.58,  f1: 82.3,  acc: 69.92
+   consist,  prec: 76.11,  rec: 89.58,  f1: 82.3,  acc: 69.92
+
+-------- google/gemini-2.5-flash ---------
+
+-------- google/gemini-2.5-flash ---------
+   policy1234,  prec: 83.5,  rec: 89.58,  f1: 86.43,  acc: 76.11
+   consist,  prec: 83.5,  rec: 89.58,  f1: 86.43,  acc: 76.11
+
+-------- google/gemini-2.5-flash ---------
+   policy1234,  prec: 85.59,  rec: 98.96,  f1: 91.79,  acc: 84.82
+   consist,  prec: 85.59,  rec: 98.96,  f1: 91.79,  acc: 84.82
+
+
+
+-------- google/gemini-2.5-flash ---------
+   policy1,  prec: 82.61,  rec: 95.0,  f1: 88.37,  acc: 79.17
+   policy2,  prec: 100.0,  rec: 56.52,  f1: 72.22,  acc: 56.52
+      policy3,  prec: 71.74,  rec: 84.62,  f1: 77.65,  acc: 63.46
+    policy1234,  prec: 85.59,  rec: 98.96,  f1: 91.79,  acc: 84.82
+   policy4,  prec: 96.15,  rec: 98.04,  f1: 97.09,  acc: 94.34
+   consist,  prec: 87.21,  rec: 86.62,  f1: 85.42,  acc: 76.67666666666666
+
+-------- google/gemini-2.5-flash ---------
+   policy3,  prec: 71.74,  rec: 84.62,  f1: 77.65,  acc: 63.46
+   consist,  prec: 71.74,  rec: 84.62,  f1: 77.65,  acc: 63.46
+
+-------- google/gemini-2.5-flash ---------
+   policy1,  prec: 65.38,  rec: 56.67,  f1: 60.71,  acc: 43.59
+   all,  prec: 65.38,  rec: 56.67,  f1: 60.71,  acc: 43.59

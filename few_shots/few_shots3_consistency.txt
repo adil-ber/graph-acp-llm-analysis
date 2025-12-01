@@ -1,0 +1,41 @@
+
+Example Input:
+R1: deny traverse on nodes (doc:Document) where doc.confidential = true to Doctor
+R2: grant modify{*} on relationships (a:Applied) to Guest
+R3: grant modify{title} on nodes (doc:Document) to Doctor
+R4: grant modify{confidential} on nodes (doc:Document) to Doctor
+R5: grant traverse on nodes (doc:Document) where doc.title = true to Doctor
+R6: grant delete on nodes (doc:Document) where doc.date > 2024 to Doctor
+R7: deny modify{date} on nodes (doc:Document) to Doctor
+R8: grant traverse on relationships (a:Applied) where a.since > 2020 to Guest 
+R9: grant add{date} on nodes (doc:Document) to Doctor
+R10: grant remove{date} on nodes (doc:Document) to Doctor
+R11: grant modify{time} on relationships (task:Task) to Doctor
+R12: deny add{time} on relationships (task:Task) to Doctor
+R13: deny remove{*} on relationships (task:Task) to Doctor
+R14: grant add{*} on nodes (p:Project) to Guest
+R15: grant remove{*} on nodes (p:Project) to Guest
+R16: grant traverse on nodes (p:Project) where cost > 10000 to Guest
+R17: deny modify{password} on nodes (c:Contact) to Guest
+R18: grant add{password} on nodes (c:Contact) to Guest
+R19: grant remove{since} on relationships (a:Applied) to Guest
+R20: grant add{age} on nodes (p:Person) to Responsable
+R21: deny modify{attr} on nodes (a:Patient) to Guest
+R22: grant add{attr} on nodes (a:Patient) to Guest
+R23: grant remove{attr} on nodes (a:Patient) to Guest
+R24: grant traverse on nodes (p:Person) where p.age>=18 to Responsable
+
+Example Output:
+{
+    'remove': {
+        'R3': 'inconsistent with R5',
+        'R4': 'inconsistent with R1',
+        'R9': 'inconsistent with R7 and R10',
+        'R20': 'inconsistent with R24'
+        'R22': 'inconsistent with R21 and R23',
+    },
+    'add': {
+        'R2' : 'deny modify{since} on relationships (a:Applied) to Guest;',
+        'R26' : 'deny add{cost} on nodes (p:Project) to Guest;' 
+    }
+}

@@ -1,0 +1,27 @@
+
+Example Input:
+R1: deny traverse on nodes (doc:Document) where doc.confidential = true to Doctor
+R2: grant create on nodes (doc:Document) to Doctor
+R3: grant create on nodes (info:Information) to Doctor
+R4: deny read{*} on nodes (pers:Person) to Doctor
+R5: grant add{age} on nodes (pers:Person) to Doctor
+R6: grant add{grade} on nodes (stud:Student) to Doctor
+R7: grant add{level} on nodes (stud:Student) where stud.grade > 10 to Doctor
+R8: grant read{level} on nodes (stud:Student) to Doctor
+R9: grant create on nodes (r:Record) to Doctor
+R10: grant traverse on nodes (r:Record) where r.date > 2020 to Doctor
+R11: grant add{attr} on nodes (i:Intern) where i.name = 'John' to Doctor
+R12: grant modify{attr} on nodes (i:Intern) where i.name = 'John' to Doctor
+R13: grant remove{attr} on nodes (i:Intern) where i.name = 'John' to Doctor
+R14: grant read{attr} on nodes (i:Intern) to Doctor
+
+Example Output:
+{
+    "remove": {
+        "R2": "No traverse permission for Document",
+        "R3": "No traverse permission for Document",
+        "R5": "No read permission for attribute age of node Person",
+        "R6": "No read permission for attribute grade of node Student",
+        "R9": "No traverse permission without condition for Record"
+    }
+}

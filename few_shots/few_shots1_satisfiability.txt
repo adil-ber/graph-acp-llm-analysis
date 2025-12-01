@@ -1,0 +1,52 @@
+<example>
+<title>Example of Unsatisfiability</title>
+<conditions>
+C1 : r = a AND ac >= 5 AND NOT(r = a AND ac >= 5)  
+C2 : score >= 90 AND score < 85  
+C3 : NOT(A > 100) AND A >= 120  
+C4 : NOT(x = 1) AND NOT(x = 2) AND (x = 1 OR x = 2)  
+C5 : NOT(B > 0) AND B > 80
+C6 : age > 30 AND age < 20  
+C7 : experience > 5 AND NOT(experience > 5)  
+C8 : hasDegree = true AND hasDegree = false  
+C9 : age > 30 AND experience < 5 AND NOT(age > 25 OR experience < 10)  
+C10 : NOT(s > 5) AND s > 10  
+C11 : (x = a OR x = m) AND (NOT(x = a) AND NOT(x = m))  
+C12 : NOT(x = a) AND NOT(x = m) AND (x = a OR x = m)  
+C13 : r = a AND ac >= i1 AND NOT(r = a AND ac >= i1)  
+C14 : role = 'admin' AND accessLevel >= 5 AND NOT(role = 'admin' AND accessLevel >= 5)  
+C15 : NOT(s > 5) AND s > 10  
+C16 : NOT(cost > 15) AND cost > 100  
+C17 : score >= 90 AND score < 85  
+C18 : salary < 100000 AND NOT(salary < 100000)
+C19 : NOT(cost > 15) AND cost > 100 
+C20 : cost = 1 AND cost != 1
+C21: role = 'user' OR role = 'admin' AND NOT(role = 'admin')  
+C22: cost > 0 AND cost != 1
+C23: count > 10 AND NOT(count > 5 AND t.count <= 20)
+</conditions>
+<output>
+{
+  "C1": "Contradiction between r = a AND ac >= 5 and NOT(r = a AND ac >= 5); cannot be true at the same time.",
+  "C2": "Impossible range: score cannot be both >= 90 and < 85 simultaneously.",
+  "C3": "A cannot be both NOT(A > 100) (i.e., A ≤ 100) and A >= 120.",
+  "C4": "x cannot simultaneously satisfy NOT(x=1) AND NOT(x=2) AND (x=1 OR x=2).",
+  "C5": "B cannot satisfy both NOT(B > 0) (i.e., B ≤ 0) and B > 80.",
+  "C6": "age cannot be both greater than 30 and less than 20.",
+  "C7": "experience cannot be greater than 5 and simultaneously NOT greater than 5.",
+  "C8": "hasDegree cannot be true and false at the same time.",
+  "C9": "age > 30 and experience < 5 contradict NOT(age > 25 OR experience < 10).",
+  "C10": "s cannot satisfy both NOT(s > 5) (i.e., s ≤ 5) and s > 10.",
+  "C11": "(x = a OR x = m) conflicts with (NOT(x = a) AND NOT(x = m)).",
+  "C12": "NOT(x = a) AND NOT(x = m) conflicts with (x = a OR x = m).",
+  "C13": "Contradiction between r = a AND ac >= i1 and NOT(r = a AND ac >= i1).",
+  "C14": "role = 'admin' AND accessLevel >= 5 cannot hold together with NOT(role = 'admin' AND accessLevel >= 5).",
+  "C15": "s cannot satisfy both NOT(s > 5) (i.e., s ≤ 5) and s > 10.",
+  "C16": "cost cannot satisfy both NOT(cost > 15) (i.e., cost ≤ 15) and cost > 100.",
+  "C17": "score cannot be both >= 90 and < 85 simultaneously.",
+  "C18": "salary < 100000 contradicts NOT(salary < 100000).",
+  "C19": "cost cannot satisfy both NOT(cost > 15) (i.e., cost ≤ 15) and cost > 100.",
+  "C20": "cost cannot be equal 1 and different than 1 at the same time.",
+}
+</output>
+</example>
