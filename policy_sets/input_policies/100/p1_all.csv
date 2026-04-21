@@ -1,0 +1,321 @@
+#la
+rule_id,rule_text;
+R1,grant create on nodes (e:Employee) to Role_NoTraverse_Creator,remove grant create;
+R2,grant create on nodes (e:Project) to Role_NoTraverse_Creator,remove grant create;
+R3,grant create on relationships (r:FRIEND_OF) to Role_NoTraverse_Creator,remove grant create;
+R4,grant create on nodes (e:Invoice) where e.amount > 1000 to Role_NoTraverse_Creator,remove grant create;
+R5,grant create on relationships (r:OWNS) to Role_NoTraverse_Creator,remove grant create;
+R6,grant create on nodes (e:Asset) to Role_NoTraverse_Creator,remove grant create;
+R7,grant create on nodes (e:Case) to Role_NoTraverse_Creator,remove grant create;
+R8,grant create on nodes (e:Patient) to Role_NoTraverse_Creator,remove grant create;
+R9,grant create on relationships (r:PAID_WITH) to Role_NoTraverse_Creator,remove grant create;
+R10,grant create on nodes (e:Budget) to Role_NoTraverse_Creator,remove grant create;
+R11,grant create on nodes (e:Salary) to Role_NoTraverse_Creator,remove grant create;
+R12,grant create on relationships (r:REPORTS_TO) to Role_NoTraverse_Creator,remove grant create;
+R13,grant create on nodes (e:Document) to Role_NoTraverse_Creator,remove grant create;
+R14,grant create on nodes (e:Task) to Role_NoTraverse_Creator,remove grant create;
+
+
+R15,grant create on nodes (e:Document) to Role_DenyTraverse_Label,add deny create on nodes (e:Document);
+R16,grant traverse on nodes (e:Document) to Role_DenyTraverse_Label,no repair;
+R17,deny traverse on nodes (e:Document) to Role_DenyTraverse_Label,no repair;
+
+R18,grant create on nodes (e:Patient) to Role_DenyTraverse_Label,add deny create on nodes (e:Patient);
+R19,grant traverse on nodes (e:Patient) to Role_DenyTraverse_Label,no repair;
+R20,deny traverse on nodes (e:Patient) to Role_DenyTraverse_Label,no repair;
+
+R21,grant create on relationships (r:OWNS) to Role_DenyTraverse_Label,add deny create on relationships (r:OWNS);
+R22,grant traverse on relationships (*) to Role_DenyTraverse_Label,no repair;
+R23,deny traverse on relationships (r:OWNS) to Role_DenyTraverse_Label,no repair;
+
+R24,grant create on nodes (e:Budget) to Role_DenyTraverse_Label,add deny create on nodes (e:Budget);
+R25,grant traverse on nodes (e:Budget) to Role_DenyTraverse_Label,no repair;
+R26,deny traverse on nodes (e:Budget) to Role_DenyTraverse_Label,no repair;
+
+
+
+R27,grant create on nodes (*) to Role_DenyTraverse_All,remove grant create;
+R28,grant traverse on nodes (e:Employee) to Role_DenyTraverse_All,no repair;
+R29,deny traverse on nodes (*) to Role_DenyTraverse_All,no repair;
+
+R30,grant create on relationships (*) to Role_DenyTraverse_All,remove grant create;
+R31,grant traverse on relationships (r:CONNECTED) to Role_DenyTraverse_All,no repair;
+R32,deny traverse on relationships (*) to Role_DenyTraverse_All,no repair;
+
+R33,grant create on nodes (*) where e.level < 5 to Role_DenyTraverse_All,remove grant create;
+R34,grant traverse on nodes (e:Project) to Role_DenyTraverse_All,no repair;
+R35,deny traverse on nodes (*) to Role_DenyTraverse_All,no repair;
+
+
+
+R36,grant create on nodes (*) to Role_LimitedTraverse,remove wildcard create + add grant create on traversable label;
+R37,grant traverse on nodes (e:Employee) to Role_LimitedTraverse,no repair;
+
+R38,grant create on relationships (*) to Role_LimitedTraverse,remove wildcard create + add grant create on traversable label;
+R39,grant traverse on relationships (r:WORKS_ON) to Role_LimitedTraverse,no repair;
+
+R40,grant create on nodes (*) where e.level > 3 to Role_LimitedTraverse,remove wildcard create + add grant create on traversable label;
+R41,grant traverse on nodes (e:Project) to Role_LimitedTraverse,no repair;
+
+R42,grant create on nodes (*) to Role_LimitedTraverse,remove wildcard create + add grant create on traversable label;
+R43,grant traverse on nodes (e:Report) to Role_LimitedTraverse,no repair;
+
+R44,grant create on nodes (*) to Role_LimitedTraverse,remove wildcard create + add grant create on traversable label;
+R45,grant traverse on nodes (e:User) to Role_LimitedTraverse,no repair;
+
+
+
+
+R46,grant traverse on nodes (e:Employee) to Role_LimitedTraverse,no repair;
+R47,grant create on nodes (e:Employee) to Role_LimitedTraverse,no repair;
+
+R48,grant traverse on nodes (e:Project) to Role_LimitedTraverse,no repair;
+R49,grant create on nodes (e:Project) to Role_LimitedTraverse,no repair;
+
+R50,grant traverse on relationships (r:WORKS_ON) to Role_LimitedTraverse,no repair;
+R51,grant create on relationships (r:WORKS_ON) to Role_LimitedTraverse,no repair;
+
+R52,deny create on nodes (e:AuditLog) to Role_DenyTraverse_Label,no repair;
+R53,deny traverse on nodes (e:AuditLog) to Role_DenyTraverse_Label,no repair;
+
+R54,grant traverse on nodes (e:Asset) to Role_NoTraverse_Creator,no repair;
+R55,grant create on nodes (e:Asset) to Role_NoTraverse_Creator,no repair;
+R56,deny traverse on nodes (e:Secret) to Role_DenyTraverse_All,no repair;
+
+
+
+
+r57, grant add{email} on nodes(u:Account) where u.owner = true to ProfileEditor;
+| Violation_type1 | Repair: remove r57
+
+r58, grant read{email} on nodes(u:Account) to ProfileEditor;
+| OK | Repair: none
+
+
+r59, grant add{phone} on nodes(u:Account) where u.verified = true to ContactManager;
+| Violation_type1 | Repair: remove r59
+
+r60, grant read{phone} on nodes(u:Account) to ContactManager;
+| OK | Repair: none
+
+
+r61, grant add{address} on nodes(u:Account) where u.owner = true to AddressEditor;
+| Violation_type2 | Repair: remove r61
+
+r62, grant read{address} on nodes(u:Account) to AddressEditor;
+| OK | Repair: none
+
+r63, deny read{*} on nodes(u:Account) to AddressEditor;
+| OK | Repair: none
+
+
+r64, grant add{salary} on nodes(e:Staff) where e.department = "HR" to HRClerk;
+| Violation_type2 | Repair: remove r64
+
+r65, grant read{salary} on nodes(e:Staff) to HRClerk;
+| OK | Repair: none
+
+r66, deny read{*} on nodes(e:Staff) to HRClerk;
+| OK | Repair: none
+
+
+r67, grant add{grade} on nodes(s:Record) where s.enrolled = true to ExamOfficer;
+| Violation_type3 | Repair: add deny add{grade} on nodes(s:Record) where s.enrolled = true to ExamOfficer
+
+r68, grant read{grade} on nodes(s:Record) to ExamOfficer;
+| OK | Repair: none
+
+r69, deny read{grade} on nodes(s:Record) to ExamOfficer;
+| OK | Repair: none
+
+
+r70, grant add{diagnosis} on nodes(p:MedicalFile) where p.assignedDoctor = true to Doctor;
+| Violation_type3 | Repair: add deny add{diagnosis} on nodes(p:MedicalFile) where p.assignedDoctor = true to Doctor
+
+r71, grant read{diagnosis} on nodes(p:MedicalFile) to Doctor;
+| OK | Repair: none
+
+r72, deny read{diagnosis} on nodes(p:MedicalFile) to Doctor;
+| OK | Repair: none
+
+
+r73, grant add{*} on relationships(o:Purchase) where o.ownerId = user.id to OrderManager;
+| Violation_type4 | Repair: replace r73 with grant add{status} on relationships(o:Purchase) where o.ownerId = user.id to OrderManager
+
+r74, grant read{status} on relationships(o:Purchase) to OrderManager;
+| OK | Repair: none
+
+
+r75, grant add{*} on relationships(i:Billing) where i.issued = true to BillingAgent;
+| Violation_type4 | Repair: replace r75 with grant add{amount} on relationships(i:Billing) where i.issued = true to BillingAgent
+
+r76, grant read{amount} on relationships(i:Billing) to BillingAgent;
+| OK | Repair: none
+
+
+r77, grant add{comment} on nodes(p:Blog) where p.authorId = user.id to Author;
+| Violation_type1 | Repair: remove r77
+
+r78, grant read{comment} on nodes(p:Blog) to Author;
+| OK | Repair: none
+
+
+r79, grant add{rating} on nodes(p:Item) where p.purchased = true to Reviewer;
+| Violation_type1 | Repair: remove r79
+
+r80, grant read{rating} on nodes(p:Item) to Reviewer;
+| OK | Repair: none
+
+
+r81, grant add{discount} on relationships(p:Item) where p.season = "SUMMER" to PricingAgent;
+| Violation_type2 | Repair: remove r81
+
+r82, grant read{discount} on relationships(p:Item) to PricingAgent;
+| OK | Repair: none
+
+r83, deny read{*} on relationships(p:Item) to PricingAgent;
+| OK | Repair: none
+
+
+r84, grant add{metadata} on nodes(f:Document) where f.ownerId = user.id to FileEditor;
+| Violation_type3 | Repair: add deny add{metadata} on nodes(f:Document) where f.ownerId = user.id to FileEditor
+
+r85, grant read{metadata} on nodes(f:Document) to FileEditor;
+| OK | Repair: none
+
+r86, deny read{metadata} on nodes(f:Document) to FileEditor;
+| OK | Repair: none
+
+
+r87, grant add{*} on relationships(t:Support) where t.assigned = true to SupportAgent;
+| Violation_type4 | Repair: replace r87 with grant add{status} on relationships(t:Support) where t.assigned = true to SupportAgent
+
+r88, grant read{status} on relationships(t:Support) to SupportAgent;
+| OK | Repair: none
+
+
+r89, grant read{title} on nodes(a:Content) to Reader;
+| OK | Repair: none
+
+r90, grant read{body} on nodes(a:Content) to Reader;
+| OK | Repair: none
+
+
+r91, grant add{summary} on nodes(r:Analytics) where r.generated = true to Analyst;
+| Violation_type1 | Repair: remove r91
+
+r92, grant read{summary} on nodes(r:Analytics) to Analyst;
+| OK | Repair: none
+
+
+r93, grant read{logs} on relationships(s:Audit) to Auditor;
+| OK | Repair: none
+
+r94, deny add{logs} on relationships(s:Audit) to Auditor;
+| OK | Repair: none
+
+
+r95, grant add{note} on nodes(c:Legal) where c.assigned = true to CaseWorker;
+| Violation_type1 | Repair: remove r95
+
+r96, grant read{note} on nodes(c:Legal) to CaseWorker;
+| OK | Repair: none
+
+
+r97, grant read{profile} on nodes(u:Public) to Guest;
+| OK | Repair: none
+
+r98, deny add{profile} on nodes(u:Public) to Guest;
+| OK | Repair: none
+
+
+r99, grant add{config} on relationships(s:Runtime) where s.admin = true to DevOps;
+| Violation_type3 | Repair: add deny add{config} on relationships(s:Runtime) where s.admin = true to DevOps
+
+r100, grant read{config} on relationships(s:Runtime) to DevOps;
+| OK | Repair: none
+
+r101, deny read{config} on relationships(s:Runtime) to DevOps;
+| OK | Repair: none
+
+
+
+r102, grant add{tag} on nodes(d:Research) where d.contributor = true to Researcher;
+| Violation_type2  | Repair: remove r102
+
+r103, grant read{tag} on nodes(d:Research) to Researcher;
+| OK | Repair: none
+
+
+r104, deny read{*} on nodes(d:Research) to Researcher;
+| OK | Repair: none
+
+
+#rel+sat
+rule_id,rule_text;
+R1,grant create on nodes (e:Employee) where e.age > 60 AND e.age < 18 to Role_Unsat_Direct; TYPE: UNSAT
+R2,grant create on nodes (e:Employee) where e.status = "active" AND e.status = "inactive" to Role_Unsat_Direct; TYPE: UNSAT
+R3,grant create on nodes (e:Employee) where false to Role_Unsat_Direct; TYPE: UNSAT
+R4,grant create on nodes (e:Employee) where e.salary > 5000 AND e.salary <= 5000 to Role_Unsat_Direct; TYPE: UNSAT
+
+R5,grant create on nodes (p:Project) where p.budget > 10000 AND p.budget < 5000 to Role_Unsat_Complex; TYPE: UNSAT
+R6,grant create on nodes (p:Project) where p.startYear >= 2025 AND p.startYear < 2020 to Role_Unsat_Complex; TYPE: UNSAT
+R7,grant create on nodes (p:Project) where p.active = true AND p.active = false to Role_Unsat_Complex; TYPE: UNSAT
+R8,grant create on nodes (p:Project) where p.phase = "init" AND p.phase != "init" to Role_Unsat_Complex; TYPE: UNSAT
+
+R9,grant create on nodes (i:Invoice) where i.amount > 1000 to Role_Redundant_Numeric; TYPE: REDUNDANT — implied by R10
+R10,grant create on nodes (i:Invoice) where i.amount > 500 to Role_Redundant_Numeric; TYPE: SAT
+R11,grant create on nodes (i:Invoice) where i.amount > 2000 to Role_Redundant_Numeric; TYPE: REDUNDANT — implied by R9
+
+R12,grant create on nodes (u:User) where u.age = 30 to Role_Redundant_Equality; TYPE: REDUNDANT — implied by R13
+R13,grant create on nodes (u:User) where u.age >= 18 AND u.age <= 65 to Role_Redundant_Equality; TYPE: SAT
+R14,grant create on nodes (u:User) where u.age >= 25 AND u.age <= 40 to Role_Redundant_Equality; TYPE: REDUNDANT — implied by R13
+
+R15,grant create on nodes (o:Order) where o.status = "paid" AND o.amount > 100 to Role_Redundant_Conjunction; TYPE: REDUNDANT — implied by R16
+R16,grant create on nodes (o:Order) where o.status = "paid" to Role_Redundant_Conjunction; TYPE: SAT
+R17,grant create on nodes (o:Order) where o.status = "paid" AND o.amount > 500 to Role_Redundant_Conjunction; TYPE: REDUNDANT — implied by R15
+
+R18,grant create on nodes (a:Asset) where a.value > 1000 to Role_Mixed_Irrelevant; TYPE: REDUNDANT — implied by R19
+R19,grant create on nodes (a:Asset) where a.value > 500 to Role_Mixed_Irrelevant; TYPE: SAT
+R20,grant create on nodes (a:Asset) where a.value < 0 AND a.value > 100 to Role_Mixed_Irrelevant; TYPE: UNSAT
+
+R21,grant create on nodes (d:Document) where d.confidential = false to Role_True_Strongest; TYPE: REDUNDANT — implied by R22
+R22,grant create on nodes (d:Document) where true to Role_True_Strongest; TYPE: SAT
+R23,grant create on nodes (d:Document) where d.owner = "admin" to Role_True_Strongest; TYPE: REDUNDANT — implied by R22
+
+R24,grant create on nodes (e:Employee) where e.age >= 18 AND e.age <= 18 to Role_Adversarial_NearUnsat; TYPE: SAT
+R25,grant create on nodes (e:Employee) where e.level > 3 AND e.level >= 4 to Role_Adversarial_NearUnsat; TYPE: SAT
+R26,grant create on nodes (e:Employee) where e.salary != 5000 AND e.salary > 5000 to Role_Adversarial_NearUnsat; TYPE: SAT
+
+R27,grant create on nodes (i:Invoice) where i.amount > 1000 to Role_Adversarial_Boundary; TYPE: REDUNDANT — implied by R28
+R28,grant create on nodes (i:Invoice) where i.amount >= 1000 to Role_Adversarial_Boundary; TYPE: SAT
+R29,grant create on nodes (i:Invoice) where i.amount >= 2000 to Role_Adversarial_Boundary; TYPE: REDUNDANT — implied by R28
+
+R30,grant create on nodes (o:Order) where o.status = "paid" AND o.amount > 0 to Role_Adversarial_Conjunction; TYPE: REDUNDANT — implied by R31
+R31,grant create on nodes (o:Order) where o.status = "paid" to Role_Adversarial_Conjunction; TYPE: SAT
+R32,grant create on nodes (o:Order) where o.status = "paid" AND o.amount > 1000 to Role_Adversarial_Conjunction; TYPE: REDUNDANT — implied by R30
+
+R33,grant create on nodes (a:Asset) where a.value > 150 to Role_Adversarial_Gap; TYPE: REDUNDANT — implied by R34
+R34,grant create on nodes (a:Asset) where a.value > 100 to Role_Adversarial_Gap; TYPE: SAT
+R35,grant create on nodes (a:Asset) where a.value > 120 to Role_Adversarial_Gap; TYPE: REDUNDANT — implied by R34
+
+R36,grant create on nodes (p:Project) where p.year > 2024 AND p.year < 2024 to Role_Adversarial_AlmostUnsat; TYPE: UNSAT
+R37,grant create on nodes (p:Project) where p.year >= 2024 AND p.year <= 2024 to Role_Adversarial_AlmostUnsat; TYPE: SAT
+
+R38,grant create on nodes (c:Customer) where c.score > 80 to Role_Redundant_Score; TYPE: REDUNDANT — implied by R39
+R39,grant create on nodes (c:Customer) where c.score > 50 to Role_Redundant_Score; TYPE: SAT
+R40,grant create on nodes (c:Customer) where c.score > 90 to Role_Redundant_Score; TYPE: REDUNDANT — implied by R38
+
+R41,grant create on nodes (t:Task) where t.priority = "high" AND t.priority = "low" to Role_Unsat_Task; TYPE: UNSAT
+R42,grant create on nodes (t:Task) where t.priority = "high" to Role_Unsat_Task; TYPE: SAT
+
+R43,grant create on nodes (b:Book) where b.pages > 0 AND b.pages >= 1 to Role_Adversarial_Book; TYPE: REDUNDANT — implied by R44
+R44,grant create on nodes (b:Book) where b.pages >= 1 to Role_Adversarial_Book; TYPE: SAT
+
+R45,grant create on nodes (s:Server) where s.load >= 70 AND s.load <= 90 to Role_Range; TYPE: REDUNDANT — implied by R46
+R46,grant create on nodes (s:Server) where s.load >= 0 AND s.load <= 100 to Role_Range; TYPE: SAT
+R47,grant create on nodes (s:Server) where s.load > 200 to Role_Range; TYPE: SAT (independent)
+
+R48,grant create on nodes (x:Example) where x.value > 10 AND x.value < 5 to Role_Final_Unsat; TYPE: UNSAT
+R49,grant create on nodes (x:Example) where x.value > 10 to Role_Final_Unsat; TYPE: SAT
+R50,grant create on nodes (x:Example) where x.value > 20 to Role_Final_Unsat; TYPE: REDUNDANT — implied by R49

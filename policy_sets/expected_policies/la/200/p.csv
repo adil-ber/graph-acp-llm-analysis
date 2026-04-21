@@ -1,0 +1,183 @@
+rule_id,rule_text;
+R1,grant delete on nodes (e:Event) where e.status = "critical" to SeniorDoctor;
+R2,grant modify{status} on nodes (e:Event) to SeniorDoctor;
+R3,deny create on nodes (p:Patient) where p.age < 18 to Intern;
+R4,grant modify{*} on nodes (p:Patient) to Intern;
+R6,grant traverse on nodes (p:Patient) where p.condition = "stable" to Intern;
+R7,deny delete on nodes (p:Patient) where p.status = critical to Intern;
+R8,deny delete on nodes (p:Patient) where p.status <> discharged or p.status = critical to Intern;
+R9,grant delete on relationships (t:TREATS) where t.priority >= 5 to HeadPhysician;
+R10,grant add{*} on relationships (t:TREATS) to HeadPhysician;
+R11,grant traverse on relationships (t:TREATS) where t.status = "active" to HeadPhysician;
+R12,grant modify{status} on relationships (t:TREATS) to HeadPhysician;
+R14,grant modify{cost} on nodes (t:Treatment) to BillingManager;
+R15,grant delete on nodes (t:Treatment) where t.approved = "no" to BillingManager;
+R17,grant create on relationships (p:PRESCRIBES) where p.dosage > 500 to Doctor;
+R18,grant remove{dosage} on relationships (p:PRESCRIBES) to Doctor;
+R19,grant traverse on relationships (p:PRESCRIBES) where p.frequency = "daily" to Doctor;
+R20,grant modify{*} on relationships (p:PRESCRIBES) to Doctor;
+R21,deny modify{diagnosis} on nodes (p:Patient) to Nurse;
+R22,grant add{diagnosis} on nodes (p:Patient) to Nurse;
+R23,grant read{diagnosis} on nodes (p:Patient) to Nurse;
+R24,grant remove{diagnosis} on nodes (p:Patient) to Nurse;
+R25,deny modify{*} on nodes (m:MedicalRecord) to Intern;
+R27,grant remove{notes} on nodes (m:MedicalRecord) to Intern;
+R28,grant read{notes} on nodes (m:MedicalRecord) to Intern;
+R29,grant traverse on relationships (pr:PRESCRIBES) where pr.age > 90 AND pr.age < 5 to Junior_Doctor;
+R30,grant create on relationships (pr:PRESCRIBES) where pr.dosage >= 1000 AND pr.dosage <= 100 to Junior_Doctor;
+R31,deny traverse on nodes (*) to Medical_Secretary;
+R32,grant traverse on nodes (m:MedicalRecord) to Medical_Secretary;
+R35,grant traverse on nodes (p:Patient) where p.age >= 0 to SeniorDoctor;
+R36,grant traverse on relationships (t:TREATS) where t.age = 30 to Department_Head;
+R37,grant traverse on relationships (t:TREATS) where t.age >= 18 AND t.age <= 65 to Department_Head;
+R38,grant traverse on relationships (t:TREATS) where t.age >= 25 AND t.age <= 40 to Department_Head;
+R40,grant read{approval_status} on nodes (t:Treatment) to Nurse;
+R41,deny read{*} on nodes (t:Treatment) to Nurse;
+R43,grant traverse on relationships (r:WORKS_ON) where r.year > 2020 to Nurse;
+R44,grant create on nodes (e:Document) to Nurse;
+R45,grant traverse on nodes (e:Document) to Nurse;
+R46,deny traverse on nodes (e:Document) to Nurse;
+
+R52,grant read{*} on relationships (t:TREATS) to HeadPhysician;
+
+R300,grant create on nodes (p:Patient) where p.condition = "stable" to Intern;
+R301,grant add{notes} on nodes (m:MedicalRecord) to Intern;
+R302,grant create on nodes (p:Patient) where p.age >= 65 to SeniorDoctor;
+R303,grant create on relationships (r:WORKS_ON) where r.year > 2020 to Nurse;
+R304,deny create on nodes (e:Document) to Nurse;
+
+
+
+R53,grant create on nodes (e:Document) to B;
+R54,grant traverse on nodes (e:Document) to B;
+R55,deny traverse on nodes (e:Document) to B;
+R56,grant create on relationships (r:OWNS) to B;
+R57,grant traverse on relationships (*) to B;
+R58,deny traverse on relationships (r:OWNS) to B;
+R59,grant traverse on relationships (r:CONNECTED) to C;
+R60,deny traverse on relationships (*) to C;
+R61,grant traverse on nodes (e:Project) to C;
+R62,deny traverse on nodes (*) to C;
+R63,grant traverse on nodes (e:Employee) to D;
+R64,grant traverse on relationships (r:WORKS_ON) where r.year > 2020 and r.year < 2018 to D;
+R65,grant traverse on nodes (e:Asset) to E;
+R66,grant create on nodes (e:Asset) to E;
+R67,deny traverse on nodes (e:Secret) to C;
+R68,grant add{email} on nodes (u:Account) where u.owner = true to ProfileEditor;
+R69,grant read{email} on nodes (u:Account) to ProfileEditor;
+R70,grant read{address} on nodes (u:Account) to AddressEditor;
+R71,deny read{*} on nodes (u:Account) to AddressEditor;
+
+R72,grant read{diagnosis} on nodes (p:MedicalFile) to Doctor;
+R73,deny read{diagnosis} on nodes (p:MedicalFile) to Doctor;
+R74,grant read{status} on relationships (o:Purchase) to OrderManager;
+
+R75,grant traverse on nodes (i:Invoice) where i.amount > 1000 to G;
+R76,grant traverse on nodes (i:Invoice) where i.amount > 500 to G;
+R77,grant traverse on nodes (i:Invoice) where i.amount > 2000 to G;
+R78,grant traverse on nodes (u:User) where u.age = 30 to G;
+R79,grant traverse on nodes (u:User) where u.age >= 18 AND u.age <= 65 to G;
+R80,grant traverse on nodes (u:User) where u.age >= 25 AND u.age <= 40 to G;
+R81,grant traverse on nodes (o:Order) where o.status = "paid" AND o.amount > 100 to G;
+R82,grant traverse on nodes (o:Order) where o.status = "paid" to G;
+R83,grant traverse on nodes (o:Order) where o.status = "paid" AND o.amount > 500 to G;
+R84,grant traverse on nodes (a:Asset) where a.value > 1000 to G;
+R85,grant traverse on nodes (a:Asset) where a.value > 500 to G;
+R86,grant traverse on nodes (a:Asset) where a.value < 0 AND a.value > 100 to G;
+R87,grant traverse on nodes (d:Document) where d.confidential = false to G;
+R88,grant traverse on nodes (d:Document) where true to G;
+R89,grant traverse on nodes (d:Document) where d.owner = "admin" to G;
+R90,grant traverse on nodes (e:Employee) where e.age >= 18 AND e.age <= 18 to G;
+R91,grant traverse on nodes (e:Employee) where e.level > 3 AND e.level >= 4 to G;
+R92,grant traverse on nodes (e:Employee) where e.salary != 5000 AND e.salary > 5000 to G;
+R93,grant create on nodes (e:Player) to B;
+R94,grant traverse on nodes (e:Player) to B;
+R95,deny traverse on nodes (e:Player) where v.score > 85 to B;
+
+R96,grant delete on nodes (d:Document) where d.status = archived to Editor;
+R97,grant modify{status} on nodes (d:Document) to Editor;
+R98,deny traverse on relationships (r:OWNS) where r.active = false to Manager;
+R99,grant remove{active} on relationships (r:OWNS) to Manager;
+R100,grant modify{*} on nodes (p:Post) to Moderator;
+R101,grant traverse on nodes (a:Account) where a.balance <= 0 to Auditor;
+R102,grant modify{*} on nodes (a:Account) to Auditor;
+R103,grant delete on relationships (t:TRANSFER) where t.amount > 10000 to Compliance;
+R104,grant modify{*} on relationships (t:TRANSFER) to Compliance;
+R105,deny modify{salary} on nodes (e:Employee) to HR_Assistant;
+R106,grant remove{*} on nodes (e:Employee) to HR_Assistant;
+R107,deny modify{date} on relationships (r:REPORTS_TO) to Analyst;
+R108,grant remove{*} on relationships (r:REPORTS_TO) to Analyst;
+R109,deny modify{*} on nodes (c:Customer) to Support;
+R110,grant remove{phone} on nodes (c:Customer) to Support;
+
+R111,deny modify{salary} on nodes (e:Employee) to Payroll_Clerk;
+R112,grant add{salary} on nodes (e:Employee) to Payroll_Clerk;
+R113,grant remove{salary} on nodes (e:Employee) to Payroll_Clerk;
+R114,deny modify{credit_limit} on nodes (a:Account) to Bank_Teller;
+R115,grant add{credit_limit} on nodes (a:Account) to Bank_Teller;
+R116,grant remove{credit_limit} on nodes (a:Account) to Bank_Teller;
+R117,deny modify{role} on nodes (u:User) to IT_Support;
+R118,grant add{role} on nodes (u:User) to IT_Support;
+R119,grant remove{role} on nodes (u:User) to IT_Support;
+
+R120,grant read{salary} on nodes (e:Employee) to Payroll_Clerk;
+R121,grant read{credit_limit} on nodes (a:Account) to Bank_Teller;
+R122,grant read{role} on nodes (u:User) to IT_Support;
+R123,grant delete on nodes (p:Patient) where p.status = discharged to Senior_Doctor;
+R124,grant modify{status} on nodes (p:Patient) to Senior_Doctor;
+R125,grant delete on relationships (pr:PRESCRIBES) where pr.dosage > 500 to Chief_Physician;
+R126,grant modify{*} on relationships (pr:PRESCRIBES) to Chief_Physician;
+R127,grant delete on nodes (e:Event) where e.severity >= 4 to Risk_Manager;
+R128,grant modify{*} on nodes (e:Event) to Risk_Manager;
+
+R201,deny create on nodes (e:Document) to B;
+R202,deny create on relationships (r:OWNS) to B;
+R203,grant create on nodes (e:Employee) to D;
+R204,grant create on relationships (r:WORKS_ON) where r.year > 2020 and r.year < 2018 to D;
+R205,deny create on nodes (e:Player) where v.score > 85 to B;
+R206,deny add{diagnosis} on nodes (p:MedicalFile) where p.assignedDoctor = true to Doctor;
+R207,grant add{status} on relationships (o:Purchase) where o.ownerId = user.id to OrderManager;
+
+
+R129,grant create on nodes (e:Document) to Y;
+R130,grant traverse on nodes (e:Document) to Y;
+R131,deny traverse on nodes (e:Document) to Y;
+R132,grant traverse on relationships (r:CONNECTED) where e.link != 5000 AND e.link > 5000 AND e.link <= 5000 to X;
+R133,deny traverse on relationships (*) to X;
+R134,grant traverse on nodes (e:Project) to X;
+R135,deny traverse on nodes (*) to X;
+R136,grant traverse on nodes (e:Employee) where e.salary != 5000 AND e.salary > 5000 to W;
+R137,grant traverse on relationships (r:WORKS_ON) where r.year > 2020 and r.year < 2018 to W;
+R138,grant delete on nodes (d:Document) where d.status = archived to EditorEditor;
+R139,grant modify{status} on nodes (d:Document) to EditorEditor;
+R140,grant modify{*} on nodes (p:Post) to ModeratorModerator;
+R141,deny modify{*} on nodes (c:Customer) to SupportSupport;
+R142,grant remove{phone} on nodes (c:Customer) to SupportIT_Support;
+R143,deny modify{role} on nodes (u:User) to IT_SupportIT_Support;
+R144,grant remove{role} on nodes (u:User) to IT_SupportIT_Support;
+
+
+R208,deny create on nodes (e:Document) to Y;
+R209,grant create on relationships (r:WORKS_ON) where r.year > 2020 and r.year < 2018 to W;
+
+
+R145,grant create on nodes (e:Document) to YY;
+R146,grant traverse on nodes (e:Document) to YY;
+R147,deny traverse on nodes (e:Document) to YY;
+R148,grant traverse on relationships (r:CONNECTED) where e.link != 5000 AND e.link > 5000 AND e.link <= 5000 to XX;
+R149,deny traverse on relationships (*) to XX;
+R150,grant traverse on nodes (e:Project) to XX;
+R151,deny traverse on nodes (*) to XX;
+R152,grant traverse on nodes (e:Employee) where e.salary != 5000 AND e.salary > 5000 to WW;
+R153,grant traverse on relationships (r:WORKS_ON) where r.year > 2020 and r.year < 2018 to WW;
+R154,grant delete on nodes (d:Document) where d.status = archived to Editor_Editor;
+R155,grant modify{status} on nodes (d:Document) to Editor_Editor;
+R156,grant modify{*} on nodes (p:Post) to Moderator_Moderator;
+R157,deny modify{*} on nodes (c:Customer) to Support_Support;
+R158,grant remove{phone} on nodes (c:Customer) to Support_IT_Support;
+R159,deny modify{role} on nodes (u:User) to IT_Support_IT_Support;
+R160,grant remove{role} on nodes (u:User) to IT_Support_IT_Support;
+
+
+R210,deny create on nodes (e:Document) to YY;
+R211,grant create on relationships (r:WORKS_ON) where r.year > 2020 and r.year < 2018 to WW;

@@ -1,4 +1,6 @@
 import sys, os
+
+import config
 sys.path.append(os.path.dirname(__file__))
 
 
@@ -7,46 +9,28 @@ class Rel_LLM():
     
     def __init__(self, llm):
         self.llm=llm
+        self.prompts={}
+        if (config.USE_COT):
+            self.prompts["system_prompt"]=self.llm.getFileContent("prompts/relev","relev_cot.txt")
+            self.prompts["json_prompt"]=self.llm.getFileContent("prompts/relev","relev_json.txt")
+        else:
+            #read prompt file
+            self.prompts["system_prompt"]=self.llm.getFileContent("prompts/relev","relev_simple.txt")
+
+               #inject few shots in the 1st system prompt
+        if(config.USE_FEW_SHOTS):
+            self.prompts["system_prompt"]+=self.llm.getFileContent("few_shots","relev_fewshots.txt")
+            
+        if(config.USE_VALIDATION):
+            self.prompts["validation_prompt"]=self.llm.getFileContent("prompts/relev","relev_validate.txt")
    
         
         
 
         
     def check(self,policy):
-        #read prompt file
-        system_prompt_sat=self.llm.getFileContent("prompts","prompt1_satisfiability.txt")
-        #inject few shots in the prompt
-        system_prompt_sat+=self.llm.getFileContent("few_shots","few_shots1_satisfiability.txt")
-        
-          #read prompt file
-        system_prompt_redund=self.llm.getFileContent("prompts","prompt2_redundancy.txt")
-        #inject few shots in the prompt
-        system_prompt_redund+=self.llm.getFileContent("few_shots","few_shots2_redundancy.txt")
-        
-        for group, conds in policy.grouped_conditions.items():
-            group_conditions=conds
-            
-            llm_input = list(group_conditions.values())
-            if(len(llm_input) != 0):
-                try:      
-                    #find unsat conditions
-                    llm_output = self.llm.generate(system_prompt_sat,llm_input)
-                    #repair unsat conditions
-                    self.repair(policy,group,llm_output,group_conditions,"sat")
-                
-                except Exception as exc:
-                    print(f"Error during satisfiability checking: {exc}")
-                
-                if(len(group_conditions) !=0):
-                    try:
-                        llm_input = list(group_conditions.values())
-                        #find redundant conditions
-                        llm_output = self.llm.generate(system_prompt_redund,llm_input)
-                        #repair redundant conditions
-                        self.repair(policy,group,llm_output,group_conditions,"redund")
-                        
-                    except Exception as exc:
-                        print(f"Error during redundancy checking: {exc}")
+        llm_output = self.llm.generate(self.prompts,policy,'relev',prev_output=None)        
+        self.llm.repair(policy,llm_output,True)
                      
 
     

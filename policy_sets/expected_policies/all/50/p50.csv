@@ -1,0 +1,18 @@
+rule_id,rule_text;
+R31,deny traverse on nodes (*) to Medical_Secretary;
+R32,grant traverse on nodes (m:MedicalRecord) to Medical_Secretary;
+
+R102,grant create on nodes (p:Patient) where p.age >= 65 to Senior_Doctor;
+R35,grant traverse on nodes (p:Patient) where p.age >= 0 to Senior_Doctor;
+
+R37,grant traverse on relationships (t:TREATS) where t.age >= 18 AND t.age <= 65 to Department_Head;
+
+
+R40,grant read{approval_status} on nodes (t:Treatment) to Nurse;
+R41,deny read{*} on nodes (t:Treatment) to Nurse;
+R101,grant create on relationships (r:WORKS_ON) where r.year > 2020 to Nurse;
+R43,grant traverse on relationships (r:WORKS_ON) where r.year > 2020 to Nurse;
+R44,grant create on nodes (e:Document) to Nurse;
+R45,grant traverse on nodes (e:Document) to Nurse;
+R46,deny traverse on nodes (e:Document) to Nurse;
+R100,deny create on nodes (e:Document) to Nurse;

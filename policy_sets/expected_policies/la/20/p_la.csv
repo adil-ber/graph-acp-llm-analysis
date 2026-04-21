@@ -1,0 +1,22 @@
+rule_id,rule_text;
+R7,grant create on nodes (e:Document) to B;
+R8,grant traverse on nodes (e:Document) to B;
+R9,deny traverse on nodes (e:Document) to B;
+R10,grant create on relationships (r:OWNS) to B;
+R11,grant traverse on relationships (*) to B;
+R12,deny traverse on relationships (r:OWNS) to B;
+R14,grant traverse on relationships (r:CONNECTED) to C;
+R15,deny traverse on relationships (*) to C;
+R17,grant traverse on nodes (e:Project) to C;
+R18,deny traverse on nodes (*) to C;
+R20,grant traverse on nodes (e:Employee) to D;
+R22,grant traverse on relationships (r:WORKS_ON) where r.year > 2020 and r.year < 2018 to D;
+R23,grant traverse on nodes (e:Asset) to E;
+R24,grant create on nodes (e:Asset) to E;
+R25,deny traverse on nodes (e:Secret) to C;
+
+R101,deny create on nodes (e:Document) to B;
+R102,deny create on relationships (r:OWNS) to B;
+R103,grant create on nodes (e:Employee) to D;
+R104,grant create on relationships (r:WORKS_ON) where r.year > 2020 and r.year < 2018 to D;
+R105,deny create on nodes (e:Player) where v.score > 85 to B;

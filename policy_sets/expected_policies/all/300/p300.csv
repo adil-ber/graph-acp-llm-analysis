@@ -1,0 +1,61 @@
+rule_id,rule_text;
+R259,grant delete on nodes (e:Event) where e.status = "critical" to beta_SeniorDoctor;
+
+R261,deny create on nodes (p:Patient) where p.age < 18 to beta_Intern;
+R262,grant modify{*} on nodes (p:Patient) to beta_Intern;
+R610,grant create on nodes (p:Patient) to Intern;
+R264,grant traverse on nodes (p:Patient) where p.condition = "stable" to beta_Intern;
+
+R266,deny delete on nodes (p:Patient) where p.status <> discharged or p.status = critical to beta_Intern;
+R606,deny modify{condition} on nodes (p:Patient) to Intern;
+R607,deny modify{status} on nodes (p:Patient) to Intern;
+R608,deny modify{age} on nodes (p:Patient) to Intern;
+
+R267,grant delete on relationships (t:TREATS) where t.priority >= 5 to beta_HeadPhysician;
+R268,grant add{*} on relationships (t:TREATS) to beta_HeadPhysician;
+R269,grant traverse on relationships (t:TREATS) where t.status = "active" to beta_HeadPhysician;
+R270,grant modify{status} on relationships (t:TREATS) to beta_HeadPhysician;
+R612,deny add{status} on relationships (t:TREATS) to beta_HeadPhysician;
+R611,deny add{priority} on relationships (t:TREATS) to beta_HeadPhysician;
+
+
+R272,grant modify{cost} on nodes (t:Treatment) to beta_BillingManager;
+R273,grant delete on nodes (t:Treatment) where t.approved = "no" to beta_BillingManager;
+
+R275,grant create on relationships (p:PRESCRIBES) where p.dosage > 500 to beta_Doctor;
+R605,deny modify{dosage} on relationships (p:PRESCRIBES) to beta_Doctor;
+R277,grant traverse on relationships (p:PRESCRIBES) where p.frequency = "daily" to beta_Doctor;
+R278,grant modify{*} on relationships (p:PRESCRIBES) to beta_Doctor;
+R609,deny modify{frequency} on relationships (p:PRESCRIBES) to beta_Doctor;
+
+R279,deny modify{diagnosis} on nodes (p:Patient) to beta_Nurse;
+R281,grant read{diagnosis} on nodes (p:Patient) to beta_Nurse;
+R282,grant remove{diagnosis} on nodes (p:Patient) to beta_Nurse;
+
+R283,deny modify{*} on nodes (m:MedicalRecord) to beta_Intern;
+R285,grant remove{notes} on nodes (m:MedicalRecord) to beta_Intern;
+R286,grant read{notes} on nodes (m:MedicalRecord) to beta_Intern;
+
+
+
+R289,deny traverse on nodes (*) to beta_Medical_Secretary;
+R290,grant traverse on nodes (m:MedicalRecord) to beta_Medical_Secretary;
+
+R292,grant create on nodes (p:Patient) where p.age >= 65 to beta_Senior_Doctor;
+R293,grant traverse on nodes (p:Patient) where p.age >= 0 to beta_Senior_Doctor;
+
+
+R295,grant traverse on relationships (t:TREATS) where t.age >= 18 AND t.age <= 65 to beta_Department_Head;
+
+
+R298,grant read{approval_status} on nodes (t:Treatment) to beta_Nurse;
+R299,deny read{*} on nodes (t:Treatment) to beta_Nurse;
+R613,grant create on relationships (r:WORKS_ON) where r.year > 2020 to beta_Nurse;
+R301,grant traverse on relationships (r:WORKS_ON) where r.year > 2020 to beta_Nurse;
+R302,grant create on nodes (e:Document) to beta_Nurse;
+R303,grant traverse on nodes (e:Document) to beta_Nurse;
+R304,deny traverse on nodes (e:Document) to beta_Nurse;
+R614,deny create on nodes (e:Document) to beta_Nurse;
+
+
+R310,grant read{*} on relationships (t:TREATS) to beta_HeadPhysician;

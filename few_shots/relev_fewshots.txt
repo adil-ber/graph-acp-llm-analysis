@@ -1,0 +1,70 @@
+--------------------------------------------------
+FEW-SHOT EXAMPLES
+--------------------------------------------------
+
+Example 1:
+
+Input:
+1- ('grant','update','nodes','project','b','Element-level'):
+  - R10: p.status = 'OPEN' AND p.status = 'CLOSED'
+  - R11: p.budget > 1000
+
+Output:
+{
+  "to remove": {
+    "R10": "UNSAT"
+  }
+}
+
+--------------------------------------------------
+
+Example 2:
+
+Input:
+1- ('grant','create','nodes','invoice','a','Element-level'):
+  - R1: e.amount >= 100
+  - R2: e.amount >= 500
+  - R3: e.amount >= 1000
+
+Output:
+{
+  "to remove": {
+    "R2": "redundant (subset of R1)",
+    "R3": "redundant (subset of R1)"
+  }
+}
+
+--------------------------------------------------
+
+Example 3:
+
+Input:
+1- ('grant','delete','nodes','user','c','Element-level'):
+  - R5: u.age >= 18 AND u.age <= 30
+  - R6: u.age = 25
+  - R7: u.age >= 40
+
+Output:
+{
+  "to remove": {
+    "R6": "redundant (subset of R5)"
+  }
+}
+
+--------------------------------------------------
+
+Example 4:
+
+Input:
+1- ('grant','read','nodes','report','d','Element-level'):
+  - R20: true
+  - R21: r.year >= 2022
+  - R22: r.year = 2023
+
+Output:
+{
+  "to remove": {
+    "R21": "redundant (subset of R20)",
+    "R22": "redundant (subset of R20)"
+  }
+}

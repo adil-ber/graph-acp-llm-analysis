@@ -1,0 +1,34 @@
+rule_id,rule_text;
+R1,grant delete on nodes (e:Event) where e.status = "critical" to SeniorDoctor;
+
+R3,deny create on nodes (p:Patient) where p.age < 18 to Intern;
+R4,grant modify{*} on nodes (p:Patient) to Intern;
+R105,grant create on nodes (p:Patient) to Intern;
+R6,grant traverse on nodes (p:Patient) where p.condition = "stable" to Intern;
+
+R8,deny delete on nodes (p:Patient) where p.status <> discharged or p.status = critical to Intern;
+R106,deny modify{condition} on nodes (p:Patient) to Intern;
+R107,deny modify{status} on nodes (p:Patient) to Intern;
+R108,deny modify{age} on nodes (p:Patient) to Intern;
+R9,grant delete on relationships (t:TREATS) where t.priority >= 5 to HeadPhysician;
+R10,grant add{*} on relationships (t:TREATS) to HeadPhysician;
+R11,grant traverse on relationships (t:TREATS) where t.status = "active" to HeadPhysician;
+R52,grant read{*} on relationships (t:TREATS) to HeadPhysician;
+R110,deny add{status} on relationships (t:TREATS) to HeadPhysician;
+R111,deny add{priority} on relationships (t:TREATS) to HeadPhysician;
+
+R14,grant modify{cost} on nodes (t:Treatment) to BillingManager;
+R15,grant delete on nodes (t:Treatment) where t.approved = "no" to BillingManager;
+
+R17,grant create on relationships (p:PRESCRIBES) where p.dosage > 500 to Doctor;
+R105,deny modify{dosage} on relationships (p:PRESCRIBES) to Doctor;
+R19,grant traverse on relationships (p:PRESCRIBES) where p.frequency = "daily" to Doctor;
+R20,grant modify{*} on relationships (p:PRESCRIBES) to Doctor;
+R109,deny modify{frequency} on relationships (p:PRESCRIBES) to Doctor;
+R21,deny modify{diagnosis} on nodes (p:Patient) to Nurse;
+
+R23,grant read{diagnosis} on nodes (p:Patient) to Nurse;
+R24,grant remove{diagnosis} on nodes (p:Patient) to Nurse;
+R25,deny modify{*} on nodes (m:MedicalRecord) to Intern;
+R27,grant remove{notes} on nodes (m:MedicalRecord) to Intern;
+R28,grant read{notes} on nodes (m:MedicalRecord) to Intern;

@@ -1,0 +1,115 @@
+### Few-shot Example 1 (No granted traverse (Absence of grant traverse))
+
+INPUT:
+
+('nodes', 'Invoice', 'Accountant', 'Element-level')
+R1: grant create on nodes (e:Invoice) to Accountant;
+
+OUTPUT:
+
+{
+  "to remove": {
+    "R1": "Create permission without traverse permission"
+  }
+}
+
+### Few-shot Example 2 (Denied traverse label)
+
+INPUT:
+
+('nodes', 'Patient', 'Doctor', 'Element-level')
+R2: grant create on nodes (e:Patient) to Doctor;
+R3: grant traverse on nodes (e:Patient) to Doctor;
+R4: deny traverse on nodes (e:Patient) where e.age > 18 to Doctor;
+
+OUTPUT:
+
+{
+  "to add": {
+    "R17": "deny create on nodes (e:Patient) where e.age > 18 to Doctor;"
+  }
+}
+
+### Few-shot Example 3 (Denied traverse label)
+
+INPUT:
+
+('relationships', 'OWNS', 'Admin', 'Element-level')
+R5: grant create on relationships (r:OWNS) to Admin;
+R6: grant traverse on relationships (*) to Admin;
+R7: deny traverse on relationships (r:OWNS) to Admin;
+
+OUTPUT:
+
+{
+  "to add": {
+    "R18":"deny create on relationships (r:OWNS) to Admin;"
+  }
+}
+
+### Few-shot Example 4 (Limited granted traverse label)
+
+INPUT:
+
+('nodes', 'User', 'Admin', 'Element-level')
+R8: grant create on nodes (*) to Admin;
+R9: grant traverse on nodes (u:User) to Admin;
+
+OUTPUT:
+
+{
+  "to remove": {
+    "R8": "Wildcard create without full traverse permission (Only User is traversable)"
+  },
+  "to add": {
+    "R19": "grant create on nodes (u:User) to Admin;"
+  }
+}
+
+### Few-shot Example 5 (No POLA violation)
+
+INPUT:
+
+('nodes', 'AuditLog', 'Operator', 'Element-level')
+R10: grant create on nodes (p:Phone) to Operator;
+R11: grant traverse on nodes (p:Phone) to Operator;
+
+OUTPUT:
+
+{}
+
+### Few-shot Example 6 (Denied traverse wildcard)
+
+INPUT:
+
+('relationships', 'CITE', 'Researcher', 'Element-level')
+R12: grant create on relationships (*) to Researcher;
+R13: grant traverse on relationships (r:CITE) to Researcher;
+R14: deny traverse on relationships (*) to Researcher;
+
+OUTPUT:
+
+{
+  "to remove": {
+    "R12": "Researcher is denied to traverse all (Wildcard) relationships"
+  }
+}
+
+### Few-shot Example 7 (Limited granted read attribute)
+
+INPUT:
+
+('nodes', 'User', 'Admin', 'Element-level')
+R15: grant add{*} on nodes (u:User) where u.status = 'new' to Manager;
+R16: grant read{grade} on nodes (u:User) to Manager;
+
+OUTPUT:
+
+{
+  "to remove": {
+    "R15": "Wildcard add without full read permission (Only attribute grade is readable)"
+  },
+  "to add": {
+    "R20": "grant add{grade} on nodes (u:User) where u.status = 'new' to Manager;"
+  }
+}

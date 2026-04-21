@@ -1,0 +1,17 @@
+rule_id,rule_text;
+R1,deny traverse on nodes (emp:Employee) where (emp.experience>2 AND (emp.experience<2 OR NOT(emp.experience>0))) to member;
+R2,deny traverse on relationships (c:CONNECTS) where (c.latency<5 AND (c.latency>=20 OR NOT(c.latency<5))) to member;
+R4,deny traverse on nodes (sys:System) where (sys.mode='safe' AND (sys.mode='unsafe' OR NOT(sys.mode='safe'))) to member;
+R5,grant remove{label} on relationships (t:TAGS) where ((t.count>=0 AND t.count<=50) OR (t.count>50 AND NOT(t.count<=50))) to member;
+R6,grant traverse on nodes (u:User) where ((u.age>=18 AND u.age<=120) AND NOT(u.age<18)) to member;
+R7,deny modify{email} on nodes (c:Client) where (c.status='active' AND (c.status!='active' OR NOT(c.status='active'))) to member;
+R9,grant remove{flag} on nodes (i:Item) where ((i.stock>=0 AND i.stock<=500) OR (i.stock>500 AND NOT(i.stock<=500))) to member;
+R10,grant traverse on relationships (l:LINKS) where ((l.weight>=0 AND l.weight<=10) OR (l.weight>10 AND NOT(l.weight<=10))) to member;
+R11,deny add{tag} on nodes (d:Data) where (d.owner='user' AND (NOT(d.owner='user') OR d.owner!='user')) to member;
+R12,grant delete on nodes (p:Patient) where ((p.age>0 AND p.age<=120) AND NOT(p.age<0)) to member;
+R13,deny traverse on nodes (v:Vehicle) where (v.speed<0 AND (v.speed>=0 OR NOT(v.speed<0))) to member;
+R14,grant traverse on nodes (e:Employee) where ((e.age>=18 AND e.age<=65) OR (e.age>65 AND NOT(e.age<=65))) to member;
+R15,deny modify{status} on nodes (d:Document) where (d.type='public' AND (d.type!='public' OR NOT(d.type='public'))) to member;
+R17,deny traverse on relationships (m:MANAGES) where (m.level>0 AND (m.level<=0 OR NOT(m.level>0))) to member;
+R19,deny add{notes} on nodes (r:Report) where (r.value<0 AND (r.value>=0 OR NOT(r.value<0))) to member;
+R20,grant traverse on nodes (sys:System) where ((sys.mode='safe' OR sys.mode='maintenance') AND NOT(sys.mode='offline')) to member;

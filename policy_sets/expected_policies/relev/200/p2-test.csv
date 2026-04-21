@@ -1,0 +1,13 @@
+rule_id,rule_text;
+R1,grant add{tag} on nodes (f:File) where ((f.owner='admin' AND f.owner!='guest') OR (f.owner='guest' AND NOT(f.owner='admin'))) to member;
+R3,grant modify{rating} on nodes (p:Product) where ((p.stars>=0 AND p.stars<=5) OR (p.stars<0 AND NOT(p.stars<0))) to member;
+R5,grant remove{label} on relationships (t:TAGS) where ((t.count>=0 AND t.count<=50) OR (t.count>50 AND NOT(t.count<=50))) to member;
+R6,grant traverse on nodes (u:User) where ((u.age>=18 AND u.age<=120) AND NOT(u.age<18)) to member;
+R8,grant create on relationships (o:OWNS) where ((o.quantity>0 AND o.quantity<1000) OR (o.quantity>=1000 AND NOT(o.quantity<1000))) to member;
+R9,grant remove{flag} on nodes (i:Item) where ((i.stock>=0 AND i.stock<=500) OR (i.stock>500 AND NOT(i.stock<=500))) to member;
+R10,grant traverse on relationships (l:LINKS) where ((l.weight>=0 AND l.weight<=10) OR (l.weight>10 AND NOT(l.weight<=10))) to member;
+R12,grant delete on nodes (p:Patient) where ((p.age>0 AND p.age<=120) AND NOT(p.age<0)) to member;
+R14,grant traverse on nodes (e:Employee) where ((e.age>=18 AND e.age<=65) OR (e.age>65 AND NOT(e.age<=65))) to member;
+R16,grant create on nodes (x:Device) where ((x.state='on' OR x.state='off') AND NOT(x.state='unknown')) to member;
+R18,grant modify{code} on nodes (app:Application) where ((app.version>=1 AND app.version<=20) OR (app.version>20 AND NOT(app.version<=20))) to member;
+R20,grant traverse on nodes (sys:System) where ((sys.mode='safe' OR sys.mode='maintenance') AND NOT(sys.mode='offline')) to member;

@@ -1,0 +1,53 @@
+rule_id,rule_text;
+R101,grant delete on nodes (e:Event) where e.status = "critical" to SeniorDoctor;
+
+R102,deny create on nodes (p:Patient) where p.age < 18 to Intern;
+R103,grant modify{*} on nodes (p:Patient) to Intern;
+R305,grant create on nodes (p:Patient) to Intern;
+R106,grant traverse on nodes (p:Patient) where p.condition = "stable" to Intern;
+
+R108,deny delete on nodes (p:Patient) where p.status <> discharged or p.status = critical to Intern;
+R306,deny modify{condition} on nodes (p:Patient) to Intern;
+R307,deny modify{status} on nodes (p:Patient) to Intern;
+R308,deny modify{age} on nodes (p:Patient) to Intern;
+R109,grant delete on relationships (t:TREATS) where t.priority >= 5 to HeadPhysician;
+R110,grant add{*} on relationships (t:TREATS) to HeadPhysician;
+R111,grant traverse on relationships (t:TREATS) where t.status = "active" to HeadPhysician;
+R152,grant read{*} on relationships (t:TREATS) to HeadPhysician;
+R310,deny add{status} on relationships (t:TREATS) to HeadPhysician;
+R311,deny add{priority} on relationships (t:TREATS) to HeadPhysician;
+
+R114,grant modify{cost} on nodes (t:Treatment) to BillingManager;
+R115,grant delete on nodes (t:Treatment) where t.approved = "no" to BillingManager;
+
+R117,grant create on relationships (p:PRESCRIBES) where p.dosage > 500 to Doctor;
+R305,deny modify{dosage} on relationships (p:PRESCRIBES) to Doctor;
+R119,grant traverse on relationships (p:PRESCRIBES) where p.frequency = "daily" to Doctor;
+R120,grant modify{*} on relationships (p:PRESCRIBES) to Doctor;
+R309,deny modify{frequency} on relationships (p:PRESCRIBES) to Doctor;
+R121,deny modify{diagnosis} on nodes (p:Patient) to Nurse;
+
+R123,grant read{diagnosis} on nodes (p:Patient) to Nurse;
+R124,grant remove{diagnosis} on nodes (p:Patient) to Nurse;
+R125,deny modify{*} on nodes (m:MedicalRecord) to Intern;
+R127,grant remove{notes} on nodes (m:MedicalRecord) to Intern;
+R128,grant read{notes} on nodes (m:MedicalRecord) to Intern;
+
+
+R131,deny traverse on nodes (*) to Medical_Secretary;
+R132,grant traverse on nodes (m:MedicalRecord) to Medical_Secretary;
+
+R302,grant create on nodes (p:Patient) where p.age >= 65 to Senior_Doctor;
+R135,grant traverse on nodes (p:Patient) where p.age >= 0 to Senior_Doctor;
+
+R137,grant traverse on relationships (t:TREATS) where t.age >= 18 AND t.age <= 65 to Department_Head;
+
+
+R140,grant read{approval_status} on nodes (t:Treatment) to Nurse;
+R141,deny read{*} on nodes (t:Treatment) to Nurse;
+R301,grant create on relationships (r:WORKS_ON) where r.year > 2020 to Nurse;
+R143,grant traverse on relationships (r:WORKS_ON) where r.year > 2020 to Nurse;
+R144,grant create on nodes (e:Document) to Nurse;
+R145,grant traverse on nodes (e:Document) to Nurse;
+R146,deny traverse on nodes (e:Document) to Nurse;
+R300,deny create on nodes (e:Document) to Nurse;

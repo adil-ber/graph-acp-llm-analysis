@@ -1,0 +1,20 @@
+rule_id,rule_text
+R7,grant create on nodes (e:Document) to B;
+R8,grant traverse on nodes (e:Document) to B;
+R9,deny traverse on nodes (e:Document) to B;
+R10,grant create on relationships (r:OWNS) to B;
+R11,grant traverse on relationships (*) to B;
+R12,deny traverse on relationships (r:OWNS) to B;
+
+R101,deny create on nodes (e:Document) to B;
+R102,deny create on relationships (r:OWNS) to B;
+
+
+R14,grant traverse on relationships (r:CONNECTED) to C;
+R15,deny traverse on relationships (*) to C;
+
+R17,grant traverse on nodes (e:Project) to C;
+R18,deny traverse on nodes (*) to C;
+
+R20,grant traverse on nodes (e:Employee) to D;
+R105,grant create on nodes (e:Employee) to D;

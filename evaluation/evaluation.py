@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import config
+
 class Evaluator:
 
     # ======================================================
@@ -67,7 +69,7 @@ class Evaluator:
     # ======================================================
     # ----------------- Evaluate Function ------------------
     # ======================================================
-    def evaluate(model, policy_id, repaired_policy, expected_policy):
+    def evaluate(model, policy_id, repaired_policy, expected_policy,iterations=0):
 
         # ---- Use shared confusion computation ----
         data = Evaluator.compute_confusion_values(expected_policy, repaired_policy)
@@ -96,6 +98,7 @@ class Evaluator:
             "score_recall": round(recall, 2),
             "score_f1": round(f1, 2),
             "score_accuracy": round(accuracy, 2),
+            "iterations": iterations
         }
 
         # Show result
@@ -107,7 +110,7 @@ class Evaluator:
         return errors
     
     
-    def model_results_average(property_checked,model_results):
+    def model_results_average(property_checked,model_results,iterations=0):
         # model_results = results[model_name]
         precision_sum = 0
         recall_sum = 0
@@ -126,7 +129,8 @@ class Evaluator:
             "score_precision": precision_sum / n if n else 0,
             "score_recall": recall_sum / n if n else 0,
             "score_f1": f1_sum / n if n else 0,
-            "score_accuracy": accuracy_sum / n if n else 0
+            "score_accuracy": accuracy_sum / n if n else 0,
+            "iterations": iterations
         }
         
         import pprint
@@ -145,10 +149,11 @@ class Evaluator:
         with EVALUATION_FILE.open("a", encoding="utf-8") as f:
             values = [
                 "   " + str(results['property_checked']),
-                "  prec: " + str(results['score_precision']),
-                "  rec: " + str(results['score_recall']),
-                "  f1: " + str(results['score_f1']),
-                "  acc: " + str(results['score_accuracy'])
+                "   prec: " + str(results['score_precision']),
+                "   rec: " + str(results['score_recall']),
+                "   f1: " + str(results['score_f1']),
+                "   acc: " + str(results['score_accuracy']),
+                " iterations: " +  str(results['iterations'])
             ]
             f.write(','.join(values) + "\n")
 

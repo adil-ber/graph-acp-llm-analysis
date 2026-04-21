@@ -1,0 +1,51 @@
+rule_id,rule_text
+
+R207,grant delete on nodes (e:Event) where e.status = "critical" to alpha_SeniorDoctor;
+
+R209,deny create on nodes (p:Patient) where p.age < 18 to alpha_Intern;
+R210,grant modify{*} on nodes (p:Patient) to alpha_Intern;
+R505,grant create on nodes (p:Patient) to alpha_Intern;
+R212,grant traverse on nodes (p:Patient) where p.condition = "stable" to alpha_Intern;
+
+R214,deny delete on nodes (p:Patient) where p.status <> discharged or p.status = critical to alpha_Intern;
+R506,deny modify{condition} on nodes (p:Patient) to alpha_Intern;
+R507,deny modify{status} on nodes (p:Patient) to alpha_Intern;
+R508,deny modify{age} on nodes (p:Patient) to alpha_Intern;
+R215,grant delete on relationships (t:TREATS) where t.priority >= 5 to alpha_HeadPhysician;
+R216,grant add{*} on relationships (t:TREATS) to alpha_HeadPhysician;
+R217,grant traverse on relationships (t:TREATS) where t.status = "active" to alpha_HeadPhysician;
+R258,grant read{*} on relationships (t:TREATS) to alpha_HeadPhysician;
+R510,deny add{status} on relationships (t:TREATS) to alpha_HeadPhysician;
+R511,deny add{priority} on relationships (t:TREATS) to alpha_HeadPhysician;
+
+R220,grant modify{cost} on nodes (t:Treatment) to alpha_BillingManager;
+R221,grant delete on nodes (t:Treatment) where t.approved = "no" to alpha_BillingManager;
+R223,grant create on relationships (p:PRESCRIBES) where p.dosage > 500 to alpha_Doctor;
+R505,deny modify{dosage} on relationships (p:PRESCRIBES) to alpha_Doctor;
+R225,grant traverse on relationships (p:PRESCRIBES) where p.frequency = "daily" to alpha_Doctor;
+R226,grant modify{*} on relationships (p:PRESCRIBES) to alpha_Doctor;
+R509,deny modify{frequency} on relationships (p:PRESCRIBES) to alpha_Doctor;
+R227,deny modify{diagnosis} on nodes (p:Patient) to alpha_Nurse;
+
+R229,grant read{diagnosis} on nodes (p:Patient) to alpha_Nurse;
+R230,grant remove{diagnosis} on nodes (p:Patient) to alpha_Nurse;
+R231,deny modify{*} on nodes (m:MedicalRecord) to alpha_Intern;
+R233,grant remove{notes} on nodes (m:MedicalRecord) to alpha_Intern;
+R234,grant read{notes} on nodes (m:MedicalRecord) to alpha_Intern;
+
+
+R237,deny traverse on nodes (*) to alpha_MedicalSecretary;
+R238,grant traverse on nodes (m:MedicalRecord) to alpha_MedicalSecretary;
+R502,grant create on nodes (p:Patient) where p.age >= 65 to alpha_SeniorDoctor;
+R241,grant traverse on nodes (p:Patient) where p.age >= 0 to alpha_SeniorDoctor;
+
+R243,grant traverse on relationships (t:TREATS) where t.age >= 18 AND t.age <= 65 to alpha_DepartmentHead;
+
+R246,grant read{approval_status} on nodes (t:Treatment) to alpha_Nurse;
+R247,deny read{*} on nodes (t:Treatment) to alpha_Nurse;
+R101,grant create on relationships (r:WORKS_ON) where r.year > 2020 to alpha_Nurse;
+R249,grant traverse on relationships (r:WORKS_ON) where r.year > 2020 to alpha_Nurse;
+R250,grant create on nodes (e:Document) to alpha_Nurse;
+R251,grant traverse on nodes (e:Document) to alpha_Nurse;
+R252,deny traverse on nodes (e:Document) to alpha_Nurse;
+R500,deny create on nodes (e:Document) to alpha_Nurse;

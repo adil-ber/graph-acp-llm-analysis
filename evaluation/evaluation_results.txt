@@ -1,73 +1,1731 @@
 
--------- deepseek/deepseek-chat-v3-0324 ---------
-   policy1,  prec: 63.16,  rec: 25.53,  f1: 36.36,  acc: 22.22
-   relev,  prec: 63.16,  rec: 25.53,  f1: 36.36,  acc: 22.22
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 90.48,   rec: 79.17,   f1: 84.44,   acc: 73.08
+   la,   prec: 90.48,   rec: 79.17,   f1: 84.44,   acc: 73.08
 
--------- deepseek/deepseek-chat-v3.1 ---------
-   policy1,  prec: 50.0,  rec: 8.51,  f1: 14.55,  acc: 7.84
-   relev,  prec: 50.0,  rec: 8.51,  f1: 14.55,  acc: 7.84
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 88.37,   rec: 80.85,   f1: 84.44,   acc: 73.08
+   la,   prec: 88.37,   rec: 80.85,   f1: 84.44,   acc: 73.08
 
--------- qwen/qwen3-next-80b-a3b-instruct ---------
-   policy1,  prec: 40.0,  rec: 72.34,  f1: 51.52,  acc: 34.69
-   relev,  prec: 40.0,  rec: 72.34,  f1: 51.52,  acc: 34.69
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
 
--------- qwen/qwen3-235b-a22b-2507 ---------
-   policy1,  prec: 83.33,  rec: 42.55,  f1: 56.34,  acc: 39.22
-   relev,  prec: 83.33,  rec: 42.55,  f1: 56.34,  acc: 39.22
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 90.7,   rec: 82.98,   f1: 86.67,   acc: 76.47
+   la,   prec: 90.7,   rec: 82.98,   f1: 86.67,   acc: 76.47
 
--------- google/gemini-2.5-flash-preview-09-2025 ---------
-   policy1,  prec: 83.72,  rec: 76.6,  f1: 80.0,  acc: 66.67
-   policy2,  prec: 100.0,  rec: 90.62,  f1: 95.08,  acc: 90.62
-   policy3,  prec: 100.0,  rec: 100.0,  f1: 100.0,  acc: 100.0
-  policy4,  prec: 100.0,  rec: 98.11,  f1: 99.05,  acc: 98.11
-   policy1234,  prec: 98.65,  rec: 97.33,  f1: 97.99,  acc: 96.05
-   relev,  prec: 96.47,  rec: 92.53,  f1: 90.82,  acc: 100.0
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 95.12,   rec: 82.98,   f1: 88.64,   acc: 79.59
+   la,   prec: 95.12,   rec: 82.98,   f1: 88.64,   acc: 79.59
 
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 90.7,   rec: 82.98,   f1: 86.67,   acc: 76.47
+   la,   prec: 90.7,   rec: 82.98,   f1: 86.67,   acc: 76.47
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 95.24,   rec: 85.11,   f1: 89.89,   acc: 81.63
+   la,   prec: 95.24,   rec: 85.11,   f1: 89.89,   acc: 81.63
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 95.24,   rec: 95.24,   f1: 95.24,   acc: 90.91
+   la,   prec: 95.24,   rec: 95.24,   f1: 95.24,   acc: 90.91
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 95.24,   rec: 95.24,   f1: 95.24,   acc: 90.91
+   la,   prec: 95.24,   rec: 95.24,   f1: 95.24,   acc: 90.91
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT NoValidation --------
+   p,   prec: 92.68,   rec: 90.48,   f1: 91.57,   acc: 84.44
+   la,   prec: 92.68,   rec: 90.48,   f1: 91.57,   acc: 84.44
+
+
+
+
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT NoValidation --------
+   p,   prec: 82.22,   rec: 88.1,   f1: 85.06,   acc: 74.0
+   la,   prec: 82.22,   rec: 88.1,   f1: 85.06,   acc: 74.0
+
+
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 91.11,   rec: 97.62,   f1: 94.25,   acc: 89.13
+   la,   prec: 91.11,   rec: 97.62,   f1: 94.25,   acc: 89.13
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 97.62,   rec: 97.62,   f1: 97.62,   acc: 95.35
+   la,   prec: 97.62,   rec: 97.62,   f1: 97.62,   acc: 95.35
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation --------
+   p,   prec: 95.24,   rec: 95.24,   f1: 95.24,   acc: 90.91
+   la,   prec: 95.24,   rec: 95.24,   f1: 95.24,   acc: 90.91
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   relev,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation --------
+   p,   prec: 100.0,   rec: 97.62,   f1: 98.8,   acc: 97.62
+   relev,   prec: 100.0,   rec: 97.62,   f1: 98.8,   acc: 97.62
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT Validation --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 88.68,   rec: 92.16,   f1: 90.38,   acc: 82.46
+   consist,   prec: 88.68,   rec: 92.16,   f1: 90.38,   acc: 82.46
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 88.68,   rec: 92.16,   f1: 90.38,   acc: 82.46
+   consist,   prec: 88.68,   rec: 92.16,   f1: 90.38,   acc: 82.46
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 92.59,   rec: 98.04,   f1: 95.24,   acc: 90.91
+   consist,   prec: 92.59,   rec: 98.04,   f1: 95.24,   acc: 90.91
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation --------
+   p,   prec: 98.04,   rec: 98.04,   f1: 98.04,   acc: 96.15
+   consist,   prec: 98.04,   rec: 98.04,   f1: 98.04,   acc: 96.15
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT NoValidation --------
+   p,   prec: 94.0,   rec: 92.16,   f1: 93.07,   acc: 87.04
+   consist,   prec: 94.0,   rec: 92.16,   f1: 93.07,   acc: 87.04
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation --------
+   p,   prec: 97.96,   rec: 94.12,   f1: 96.0,   acc: 92.31
+   consist,   prec: 97.96,   rec: 94.12,   f1: 96.0,   acc: 92.31
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT NoValidation --------
+   p,   prec: 83.64,   rec: 90.2,   f1: 86.79,   acc: 76.67
+   consist,   prec: 83.64,   rec: 90.2,   f1: 86.79,   acc: 76.67
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation --------
+   p,   prec: 93.02,   rec: 95.24,   f1: 94.12,   acc: 88.89
+   la,   prec: 93.02,   rec: 95.24,   f1: 94.12,   acc: 88.89
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation --------
+   p,   prec: 97.62,   rec: 97.62,   f1: 97.62,   acc: 95.35
+   la,   prec: 97.62,   rec: 97.62,   f1: 97.62,   acc: 95.35
+
+
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 20--------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   all,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 78.95,   rec: 83.33,   f1: 81.08,   acc: 68.18
+   all,   prec: 78.95,   rec: 83.33,   f1: 81.08,   acc: 68.18
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 78.57,   rec: 91.67,   f1: 84.62,   acc: 73.33
+   all,   prec: 78.57,   rec: 91.67,   f1: 84.62,   acc: 73.33
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 88.57,   rec: 86.11,   f1: 87.32,   acc: 77.5
+   all,   prec: 88.57,   rec: 86.11,   f1: 87.32,   acc: 77.5
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 94.29,   rec: 91.67,   f1: 92.96,   acc: 86.84
+   all,   prec: 94.29,   rec: 91.67,   f1: 92.96,   acc: 86.84
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   la,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 92.59,   rec: 94.34,   f1: 93.46,   acc: 87.72
+   consist,   prec: 92.59,   rec: 94.34,   f1: 93.46,   acc: 87.72
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 94.55,   rec: 96.3,   f1: 95.41,   acc: 91.23
+   consist,   prec: 94.55,   rec: 96.3,   f1: 95.41,   acc: 91.23
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 96.3,   rec: 96.3,   f1: 96.3,   acc: 92.86
+   consist,   prec: 96.3,   rec: 96.3,   f1: 96.3,   acc: 92.86
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 92.73,   rec: 94.44,   f1: 93.58,   acc: 87.93
+   consist,   prec: 92.73,   rec: 94.44,   f1: 93.58,   acc: 87.93
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 92.86,   rec: 96.3,   f1: 94.55,   acc: 89.66
+   consist,   prec: 92.86,   rec: 96.3,   f1: 94.55,   acc: 89.66
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 96.3,   rec: 96.3,   f1: 96.3,   acc: 92.86
+   consist,   prec: 96.3,   rec: 96.3,   f1: 96.3,   acc: 92.86
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 96.3,   rec: 96.3,   f1: 96.3,   acc: 92.86
+   consist,   prec: 96.3,   rec: 96.3,   f1: 96.3,   acc: 92.86
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 100.0,   rec: 94.64,   f1: 97.25,   acc: 94.64
+   consist,   prec: 100.0,   rec: 94.64,   f1: 97.25,   acc: 94.64
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 100.0,   rec: 96.43,   f1: 98.18,   acc: 96.43
+   consist,   prec: 100.0,   rec: 96.43,   f1: 98.18,   acc: 96.43
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 94.12,   rec: 82.05,   f1: 87.67,   acc: 78.05
+   all,   prec: 94.12,   rec: 82.05,   f1: 87.67,   acc: 78.05
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 94.29,   rec: 84.62,   f1: 89.19,   acc: 80.49
+   all,   prec: 94.29,   rec: 84.62,   f1: 89.19,   acc: 80.49
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 97.14,   rec: 87.18,   f1: 91.89,   acc: 85.0
+   all,   prec: 97.14,   rec: 87.18,   f1: 91.89,   acc: 85.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 100 --------
+   p,   prec: 89.23,   rec: 89.23,   f1: 89.23,   acc: 80.56
+   all,   prec: 89.23,   rec: 89.23,   f1: 89.23,   acc: 80.56
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 100 without consist--------
+   p,   prec: 96.88,   rec: 95.38,   f1: 96.12,   acc: 92.54
+   all,   prec: 96.88,   rec: 95.38,   f1: 96.12,   acc: 92.54
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 100 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 100 --------
+   p,   prec: 94.37,   rec: 97.1,   f1: 95.71,   acc: 91.78
+   all,   prec: 94.37,   rec: 97.1,   f1: 95.71,   acc: 91.78
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 94.29,   rec: 84.62,   f1: 89.19,   acc: 80.49
+   all,   prec: 94.29,   rec: 84.62,   f1: 89.19,   acc: 80.49
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 92.31,   rec: 90.0,   f1: 91.14,   acc: 83.72
+   all,   prec: 92.31,   rec: 90.0,   f1: 91.14,   acc: 83.72
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 94.74,   rec: 90.0,   f1: 92.31,   acc: 85.71
+   all,   prec: 94.74,   rec: 90.0,   f1: 92.31,   acc: 85.71
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 150 --------
+   p,   prec: 95.28,   rec: 93.52,   f1: 94.39,   acc: 89.38
+   all,   prec: 95.28,   rec: 93.52,   f1: 94.39,   acc: 89.38
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 97.44,   rec: 95.0,   f1: 96.2,   acc: 92.68
+   all,   prec: 97.44,   rec: 95.0,   f1: 96.2,   acc: 92.68
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 100 --------
+   p,   prec: 94.44,   rec: 98.55,   f1: 96.45,   acc: 93.15
+   all,   prec: 94.44,   rec: 98.55,   f1: 96.45,   acc: 93.15
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 150 --------
+   p,   prec: 88.12,   rec: 82.41,   f1: 85.17,   acc: 74.17
+   all,   prec: 88.12,   rec: 82.41,   f1: 85.17,   acc: 74.17
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 25 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 20 --------
+   p,   prec: 93.33,   rec: 100.0,   f1: 96.55,   acc: 93.33
+   all,   prec: 93.33,   rec: 100.0,   f1: 96.55,   acc: 93.33
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 86.01,   rec: 91.79,   f1: 88.81,   acc: 79.87
+   all,   prec: 86.01,   rec: 91.79,   f1: 88.81,   acc: 79.87
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 200 --------
+   p,   prec: 75.52,   rec: 80.6,   f1: 77.98,   acc: 63.91
+   all,   prec: 75.52,   rec: 80.6,   f1: 77.98,   acc: 63.91
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+
+Model: openai/gpt-oss-120b - ERROR: [Errno 2] No such file or directory: '/home/adbe/Doctorat/jorunal-wiley/GraphSafeLLM_Analyzer/prompts/relev/relev_simple.txt'
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 20 --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   all,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 20 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 20 --------
+   p,   prec: 100.0,   rec: 92.86,   f1: 96.3,   acc: 92.86
+   all,   prec: 100.0,   rec: 92.86,   f1: 96.3,   acc: 92.86
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 20 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 20 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 20 --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   relev,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 20 --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   all,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 95.12,   rec: 97.5,   f1: 96.3,   acc: 92.86
+   all,   prec: 95.12,   rec: 97.5,   f1: 96.3,   acc: 92.86
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 100 --------
+   p,   prec: 95.65,   rec: 95.65,   f1: 95.65,   acc: 91.67
+   all,   prec: 95.65,   rec: 95.65,   f1: 95.65,   acc: 91.67
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 150 --------
+   p,   prec: 81.67,   rec: 90.74,   f1: 85.96,   acc: 75.38
+   all,   prec: 81.67,   rec: 90.74,   f1: 85.96,   acc: 75.38
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 150 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 150 --------
+   p,   prec: 86.44,   rec: 94.44,   f1: 90.27,   acc: 82.26
+   all,   prec: 86.44,   rec: 94.44,   f1: 90.27,   acc: 82.26
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 150 --------
+   p,   prec: 94.39,   rec: 93.52,   f1: 93.95,   acc: 88.6
+   all,   prec: 94.39,   rec: 93.52,   f1: 93.95,   acc: 88.6
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+   p,   prec: 77.03,   rec: 85.07,   f1: 80.85,   acc: 67.86
+   all,   prec: 77.03,   rec: 85.07,   f1: 80.85,   acc: 67.86
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 20 --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   relev,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT NoValidation 20 --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   relev,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT NoValidation 50 --------
+   p,   prec: 82.69,   rec: 100.0,   f1: 90.53,   acc: 82.69
+   relev,   prec: 82.69,   rec: 100.0,   f1: 90.53,   acc: 82.69
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+   p,   prec: 87.76,   rec: 100.0,   f1: 93.48,   acc: 87.76
+   relev,   prec: 87.76,   rec: 100.0,   f1: 93.48,   acc: 87.76
+
+-------- mistral-medium-latest ---------
+-------- ORDERED FEW COT NoValidation 20 --------
+   p,   prec: 100.0,   rec: 95.45,   f1: 97.67,   acc: 95.45
+   relev,   prec: 100.0,   rec: 95.45,   f1: 97.67,   acc: 95.45
+
+-------- mistral-medium-latest ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 97.44,   rec: 88.37,   f1: 92.68,   acc: 86.36
+   relev,   prec: 97.44,   rec: 88.37,   f1: 92.68,   acc: 86.36
+
+-------- mistral-medium-latest ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 97.44,   rec: 88.37,   f1: 92.68,   acc: 86.36
+   relev,   prec: 97.44,   rec: 88.37,   f1: 92.68,   acc: 86.36
+
+-------- mistral-medium-latest ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 80.0,   rec: 81.82,   f1: 80.9,   acc: 67.92
+   la,   prec: 80.0,   rec: 81.82,   f1: 80.9,   acc: 67.92
+
+-------- mistral-medium-latest ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 75.0,   rec: 88.64,   f1: 81.25,   acc: 68.42
+   la,   prec: 75.0,   rec: 88.64,   f1: 81.25,   acc: 68.42
+
+-------- mistral-medium-latest ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 85.96,   rec: 85.96,   f1: 85.96,   acc: 75.38
+   consist,   prec: 85.96,   rec: 85.96,   f1: 85.96,   acc: 75.38
+
+-------- stepfun/step-3.5-flash:free ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 90.38,   rec: 82.46,   f1: 86.24,   acc: 75.81
+   consist,   prec: 90.38,   rec: 82.46,   f1: 86.24,   acc: 75.81
+
+-------- arcee-ai/trinity-large-preview:free ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 90.38,   rec: 82.46,   f1: 86.24,   acc: 75.81
+   consist,   prec: 90.38,   rec: 82.46,   f1: 86.24,   acc: 75.81
+
+-------- upstage/solar-pro-3:free ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 94.12,   rec: 84.21,   f1: 88.89,   acc: 80.0
+   consist,   prec: 94.12,   rec: 84.21,   f1: 88.89,   acc: 80.0
+
+-------- z-ai/glm-4.5-air:free ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 97.96,   rec: 84.21,   f1: 90.57,   acc: 82.76
+   consist,   prec: 97.96,   rec: 84.21,   f1: 90.57,   acc: 82.76
+
+-------- z-ai/glm-4.5-air:free ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 96.49,   rec: 96.49,   f1: 96.49,   acc: 93.22
+   consist,   prec: 96.49,   rec: 96.49,   f1: 96.49,   acc: 93.22
+
+-------- upstage/solar-pro-3:free ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 80.0,   rec: 90.91,   f1: 85.11,   acc: 74.07
+   la,   prec: 80.0,   rec: 90.91,   f1: 85.11,   acc: 74.07
+
+-------- upstage/solar-pro-3:free ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 86.36,   rec: 86.36,   f1: 86.36,   acc: 76.0
+   la,   prec: 86.36,   rec: 86.36,   f1: 86.36,   acc: 76.0
+
+-------- upstage/solar-pro-3:free ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+   p,   prec: 72.55,   rec: 84.09,   f1: 77.89,   acc: 63.79
+   la,   prec: 72.55,   rec: 84.09,   f1: 77.89,   acc: 63.79
+
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p25,   prec: 89.29,   rec: 92.59,   f1: 90.91,   acc: 83.33
+   all,   prec: 89.29,   rec: 92.59,   f1: 90.91,   acc: 83.33
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p25,   prec: 96.15,   rec: 92.59,   f1: 94.34,   acc: 89.29
+   p50,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   total f1= 96.62 corr=38 expected=40 repaired=39
+   if moyen then 97.17
+
+
+
+   all,   prec: 96.15,   rec: 92.59,   f1: 94.34,   acc: 89.29
+
+
+
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 100 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 100 --------
+   p25,   prec: 100.0,   rec: 93.33,   f1: 96.55,   acc: 93.33
+   p50,   prec: 86.67,   rec: 100.0,   f1: 92.86,   acc: 86.67
+   p75,   prec: 88.24,   rec: 93.75,   f1: 90.91,   acc: 83.33
+   p100,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   all,   prec: 93.7275,   rec: 96.77,   f1: 95.94,   acc: 90.8325
+   total f1= 96.40 corr=67 expected=68 repaired=71
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 150 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 150 --------
+   p25,   prec: 100.0,   rec: 94.44,   f1: 97.14,   acc: 94.44
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 96.0,   rec: 100.0,   f1: 97.96,   acc: 96.0
+   p125,   prec: 96.97,   rec: 94.12,   f1: 95.52,   acc: 91.43
+   p150,   prec: 100.0,   rec: 92.31,   f1: 96.0,   acc: 92.31
+   all,   prec: 96.776,   rec: 96.174,   f1: 96.37199999999999,   acc: 93.018
+   total f1= ? corr=105 expected=109 repaired=109
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p25,   prec: 100.0,   rec: 94.44,   f1: 97.14,   acc: 94.44
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 96.88,   rec: 100.0,   f1: 98.41,   acc: 96.88
+   p125,   prec: 92.59,   rec: 92.59,   f1: 92.59,   acc: 86.21
+   p150,   prec: 85.71,   rec: 81.82,   f1: 83.72,   acc: 72.0
+   p200,   prec: 100.0,   rec: 90.0,   f1: 94.74,   acc: 90.0
+   all,   prec: 94.34833333333331,   rec: 93.14166666666665,   f1: 93.64,   acc: 88.40666666666668
+   total f1= ? corr=105 expected=109 repaired=109
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 200 --------
+   p25,   prec: 100.0,   rec: 94.44,   f1: 97.14,   acc: 94.44
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 96.88,   rec: 100.0,   f1: 98.41,   acc: 96.88
+   p125,   prec: 92.59,   rec: 92.59,   f1: 92.59,   acc: 86.21
+   p150,   prec: 95.0,   rec: 86.36,   f1: 90.48,   acc: 82.61
+   p200,   prec: 100.0,   rec: 90.0,   f1: 94.74,   acc: 90.0
+   all,   prec: 95.89666666666666,   rec: 93.89833333333333,   f1: 94.76666666666667,   acc: 90.175
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+   p25,   prec: 100.0,   rec: 94.44,   f1: 97.14,   acc: 94.44
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 93.75,   rec: 96.77,   f1: 95.24,   acc: 90.91
+   p125,   prec: 88.89,   rec: 88.89,   f1: 88.89,   acc: 80.0
+   p150,   prec: 85.71,   rec: 81.82,   f1: 83.72,   acc: 72.0
+   p200,   prec: 90.0,   rec: 90.0,   f1: 90.0,   acc: 81.82
+   all,   prec: 91.54333333333334,   rec: 91.98666666666666,   f1: 91.705,   acc: 85.01333333333334
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 150 --------
+   p25,   prec: 100.0,   rec: 94.44,   f1: 97.14,   acc: 94.44
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   p125,   prec: 94.44,   rec: 100.0,   f1: 97.14,   acc: 94.44
+   p150,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   all,   prec: 97.07,   rec: 98.888,   f1: 97.904,   acc: 95.958
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 150 --------
+   p25,   prec: 100.0,   rec: 94.44,   f1: 97.14,   acc: 94.44
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 96.0,   rec: 100.0,   f1: 97.96,   acc: 96.0
+   p125,   prec: 96.97,   rec: 94.12,   f1: 95.52,   acc: 91.43
+   p150,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   all,   prec: 96.776,   rec: 97.712,   f1: 97.172,   acc: 94.55600000000001
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 150 --------
+   p25,   prec: 94.44,   rec: 94.44,   f1: 94.44,   acc: 89.47
+   p50,   prec: 86.96,   rec: 100.0,   f1: 93.02,   acc: 86.96
+   p100,   prec: 96.0,   rec: 100.0,   f1: 97.96,   acc: 96.0
+   p125,   prec: 96.97,   rec: 94.12,   f1: 95.52,   acc: 91.43
+   p150,   prec: 92.31,   rec: 92.31,   f1: 92.31,   acc: 85.71
+   all,   prec: 93.336,   rec: 96.174,   f1: 94.64999999999999,   acc: 89.914
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 150 --------
+   p25,   prec: 94.44,   rec: 94.44,   f1: 94.44,   acc: 89.47
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 100 --------
+   p25,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   p50,   prec: 81.25,   rec: 100.0,   f1: 89.66,   acc: 81.25
+   p75,   prec: 93.75,   rec: 93.75,   f1: 93.75,   acc: 88.24
+   p100,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   all,   prec: 93.75,   rec: 98.4375,   f1: 95.85249999999999,   acc: 92.3725
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 100 --------
+   p25,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   p50,   prec: 86.67,   rec: 100.0,   f1: 92.86,   acc: 86.67
+   p75,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   p100,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   all,   prec: 96.6675,   rec: 100.0,   f1: 98.215,   acc: 96.6675
+
+-------- mistral-medium-latest ---------
+-------- ORDERED FEW DIRECT NoValidation 100 --------
+   p,   prec: 75.34,   rec: 80.88,   f1: 78.01,   acc: 63.95
+   all,   prec: 75.34,   rec: 80.88,   f1: 78.01,   acc: 63.95
+
+-------- google/gemini-2.0-flash-exp ---------
+-------- ORDERED FEW DIRECT NoValidation 100 --------
+
+Model: google/gemini-2.0-flash-exp - ERROR: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- nvidia/nemotron-3-nano-30b-a3b:free ---------
+-------- ORDERED FEW DIRECT NoValidation 100 --------
+   p,   prec: 69.41,   rec: 86.76,   f1: 77.12,   acc: 62.77
+   all,   prec: 69.41,   rec: 86.76,   f1: 77.12,   acc: 62.77
+
+-------- upstage/solar-pro-3:free ---------
+-------- ORDERED FEW DIRECT NoValidation 100 --------
+   p,   prec: 51.9,   rec: 60.29,   f1: 55.78,   acc: 38.68
+   all,   prec: 51.9,   rec: 60.29,   f1: 55.78,   acc: 38.68
+
+-------- upstage/solar-pro-3:free ---------
+-------- ORDERED FEW COT NoValidation 100 --------
+   p,   prec: 33.33,   rec: 36.76,   f1: 34.97,   acc: 21.19
+   all,   prec: 33.33,   rec: 36.76,   f1: 34.97,   acc: 21.19
+
+-------- upstage/solar-pro-3:free ---------
+-------- ORDERED ZERO COT Validation 100 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT Validation 100 --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   relev,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT Validation 100 --------
+   p,   prec: 98.8,   rec: 98.8,   f1: 98.8,   acc: 97.62
+   la,   prec: 98.8,   rec: 98.8,   f1: 98.8,   acc: 97.62
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT Validation 50 --------
+   p,   prec: 93.18,   rec: 93.18,   f1: 93.18,   acc: 87.23
+   la,   prec: 93.18,   rec: 93.18,   f1: 93.18,   acc: 87.23
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT Validation 50 --------
+   p,   prec: 95.45,   rec: 95.45,   f1: 95.45,   acc: 91.3
+   la,   prec: 95.45,   rec: 95.45,   f1: 95.45,   acc: 91.3
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT Validation 50 --------
+   p,   prec: 97.73,   rec: 97.73,   f1: 97.73,   acc: 95.56
+   la,   prec: 97.73,   rec: 97.73,   f1: 97.73,   acc: 95.56
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT Validation 50 --------
+   p,   prec: 98.18,   rec: 94.74,   f1: 96.43,   acc: 93.1
+   consist,   prec: 98.18,   rec: 94.74,   f1: 96.43,   acc: 93.1
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 50 --------
+   p,   prec: 90.38,   rec: 82.46,   f1: 86.24,   acc: 75.81
+   consist,   prec: 90.38,   rec: 82.46,   f1: 86.24,   acc: 75.81
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 50 --------
+   p,   prec: 83.93,   rec: 82.46,   f1: 83.19,   acc: 71.21
+   consist,   prec: 83.93,   rec: 82.46,   f1: 83.19,   acc: 71.21
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT Validation 50 --------
+   p,   prec: 96.36,   rec: 92.98,   f1: 94.64,   acc: 89.83
+   consist,   prec: 96.36,   rec: 92.98,   f1: 94.64,   acc: 89.83
+
+-------- mistralai/mistral-nemo ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 76.79,   rec: 75.44,   f1: 76.11,   acc: 61.43
+   consist,   prec: 76.79,   rec: 75.44,   f1: 76.11,   acc: 61.43
+
+-------- mistralai/mistral-nemo ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 88.46,   rec: 80.7,   f1: 84.4,   acc: 73.02
+   consist,   prec: 88.46,   rec: 80.7,   f1: 84.4,   acc: 73.02
+
+-------- mistralai/mistral-nemo ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 92.86,   rec: 68.42,   f1: 78.79,   acc: 65.0
+   consist,   prec: 92.86,   rec: 68.42,   f1: 78.79,   acc: 65.0
+
+-------- mistralai/mistral-nemo ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 87.5,   rec: 61.4,   f1: 72.16,   acc: 56.45
+   consist,   prec: 87.5,   rec: 61.4,   f1: 72.16,   acc: 56.45
+
+-------- google/gemini-2.5-flash-lite-preview-09-2025 ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 75.86,   rec: 77.19,   f1: 76.52,   acc: 61.97
+   consist,   prec: 75.86,   rec: 77.19,   f1: 76.52,   acc: 61.97
+
+-------- google/gemini-2.0-flash-lite-001 ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 86.0,   rec: 75.44,   f1: 80.37,   acc: 67.19
+   consist,   prec: 86.0,   rec: 75.44,   f1: 80.37,   acc: 67.19
+
+-------- google/gemini-2.0-flash-lite-001 ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 90.2,   rec: 80.7,   f1: 85.19,   acc: 74.19
+   consist,   prec: 90.2,   rec: 80.7,   f1: 85.19,   acc: 74.19
+
+-------- google/gemini-2.0-flash-lite-001 ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 90.0,   rec: 78.95,   f1: 84.11,   acc: 72.58
+   consist,   prec: 90.0,   rec: 78.95,   f1: 84.11,   acc: 72.58
+
+-------- google/gemini-2.0-flash-lite-001 ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 92.0,   rec: 80.7,   f1: 85.98,   acc: 75.41
+   consist,   prec: 92.0,   rec: 80.7,   f1: 85.98,   acc: 75.41
+
+-------- google/gemini-2.0-flash-lite-001 ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 76.47,   rec: 88.64,   f1: 82.11,   acc: 69.64
+   la,   prec: 76.47,   rec: 88.64,   f1: 82.11,   acc: 69.64
+
+-------- google/gemini-2.0-flash-lite-001 ---------
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 76.47,   rec: 88.64,   f1: 82.11,   acc: 69.64
+   la,   prec: 76.47,   rec: 88.64,   f1: 82.11,   acc: 69.64
+
+-------- google/gemini-2.0-flash-lite-001 ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 75.0,   rec: 88.64,   f1: 81.25,   acc: 68.42
+   la,   prec: 75.0,   rec: 88.64,   f1: 81.25,   acc: 68.42
 
 -------- google/gemini-2.5-flash ---------
-   policy1234,  prec: 91.8,  rec: 100.0,  f1: 95.73,  acc: 91.8
-   la,  prec: 91.8,  rec: 100.0,  f1: 95.73,  acc: 91.8
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 84.44,   rec: 86.36,   f1: 85.39,   acc: 74.51
+   la,   prec: 84.44,   rec: 86.36,   f1: 85.39,   acc: 74.51
 
 -------- google/gemini-2.5-flash ---------
-   policy1234,  prec: 76.11,  rec: 89.58,  f1: 82.3,  acc: 69.92
-   consist,  prec: 76.11,  rec: 89.58,  f1: 82.3,  acc: 69.92
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 80.0,   rec: 90.91,   f1: 85.11,   acc: 74.07
+   la,   prec: 80.0,   rec: 90.91,   f1: 85.11,   acc: 74.07
 
 -------- google/gemini-2.5-flash ---------
-   policy1,  prec: 86.67,  rec: 98.91,  f1: 92.39,  acc: 85.85
-   policy2,  prec: 86.96,  rec: 95.24,  f1: 90.91,  acc: 83.33
-   policy3,  prec: 96.67,  rec: 100.0,  f1: 98.31,  acc: 96.67
-   policy4,  prec: 100.0,  rec: 83.72,  f1: 91.14,  acc: 83.72
-    policy1234,  prec: 91.8,  rec: 100.0,  f1: 95.73,  acc: 91.8
-   la,  prec: 92.42,  rec: 95.57,  f1: 93.69,  acc: 87.39250000000001
-
--------- google/gemini-2.5-flash ---------
-   policy1234,  prec: 76.11,  rec: 89.58,  f1: 82.3,  acc: 69.92
-   consist,  prec: 76.11,  rec: 89.58,  f1: 82.3,  acc: 69.92
-
--------- google/gemini-2.5-flash ---------
-
--------- google/gemini-2.5-flash ---------
-   policy1234,  prec: 83.5,  rec: 89.58,  f1: 86.43,  acc: 76.11
-   consist,  prec: 83.5,  rec: 89.58,  f1: 86.43,  acc: 76.11
-
--------- google/gemini-2.5-flash ---------
-   policy1234,  prec: 85.59,  rec: 98.96,  f1: 91.79,  acc: 84.82
-   consist,  prec: 85.59,  rec: 98.96,  f1: 91.79,  acc: 84.82
+-------- ORDERED FEW COT Validation 50 --------
+   p,   prec: 81.25,   rec: 88.64,   f1: 84.78,   acc: 73.58
+   la,   prec: 81.25,   rec: 88.64,   f1: 84.78,   acc: 73.58
 
 
 
--------- google/gemini-2.5-flash ---------
-   policy1,  prec: 82.61,  rec: 95.0,  f1: 88.37,  acc: 79.17
-   policy2,  prec: 100.0,  rec: 56.52,  f1: 72.22,  acc: 56.52
-      policy3,  prec: 71.74,  rec: 84.62,  f1: 77.65,  acc: 63.46
-    policy1234,  prec: 85.59,  rec: 98.96,  f1: 91.79,  acc: 84.82
-   policy4,  prec: 96.15,  rec: 98.04,  f1: 97.09,  acc: 94.34
-   consist,  prec: 87.21,  rec: 86.62,  f1: 85.42,  acc: 76.67666666666666
 
--------- google/gemini-2.5-flash ---------
-   policy3,  prec: 71.74,  rec: 84.62,  f1: 77.65,  acc: 63.46
-   consist,  prec: 71.74,  rec: 84.62,  f1: 77.65,  acc: 63.46
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 95.45,   rec: 95.45,   f1: 95.45,   acc: 91.3
+   la,   prec: 95.45,   rec: 95.45,   f1: 95.45,   acc: 91.3
 
--------- google/gemini-2.5-flash ---------
-   policy1,  prec: 65.38,  rec: 56.67,  f1: 60.71,  acc: 43.59
-   all,  prec: 65.38,  rec: 56.67,  f1: 60.71,  acc: 43.59
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 95.45,   rec: 95.45,   f1: 95.45,   acc: 91.3
+   la,   prec: 95.45,   rec: 95.45,   f1: 95.45,   acc: 91.3
+
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 95.12,   rec: 97.5,   f1: 96.3,   acc: 92.86
+   all,   prec: 95.12,   rec: 97.5,   f1: 96.3,   acc: 92.86
+
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 69.05,   rec: 72.5,   f1: 70.73,   acc: 54.72
+   all,   prec: 69.05,   rec: 72.5,   f1: 70.73,   acc: 54.72
+
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 75.0,   rec: 88.64,   f1: 81.25,   acc: 68.42
+   la,   prec: 75.0,   rec: 88.64,   f1: 81.25,   acc: 68.42
+
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 95.45,   rec: 95.45,   f1: 95.45,   acc: 91.3
+   la,   prec: 95.45,   rec: 95.45,   f1: 95.45,   acc: 91.3
+
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 100.0,   rec: 98.25,   f1: 99.12,   acc: 98.25
+   consist,   prec: 100.0,   rec: 98.25,   f1: 99.12,   acc: 98.25
+
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 90.2,   rec: 80.7,   f1: 85.19,   acc: 74.19
+   consist,   prec: 90.2,   rec: 80.7,   f1: 85.19,   acc: 74.19
+
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 90.2,   rec: 80.7,   f1: 85.19,   acc: 74.19
+   consist,   prec: 90.2,   rec: 80.7,   f1: 85.19,   acc: 74.19
+
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 90.2,   rec: 80.7,   f1: 85.19,   acc: 74.19
+   consist,   prec: 90.2,   rec: 80.7,   f1: 85.19,   acc: 74.19
+
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+
+Model: openai/gpt-oss-120b - ERROR: 400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+
+Model: openai/gpt-oss-120b - ERROR: 400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+
+Model: openai/gpt-oss-120b - ERROR: 400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 98.15,   rec: 92.98,   f1: 95.5,   acc: 91.38
+   consist,   prec: 98.15,   rec: 92.98,   f1: 95.5,   acc: 91.38
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT NoValidation 50 --------
+   p,   prec: 82.46,   rec: 82.46,   f1: 82.46,   acc: 70.15
+   consist,   prec: 82.46,   rec: 82.46,   f1: 82.46,   acc: 70.15
+
+-------- x-ai/grok-code-fast-1 ---------
+-------- ORDERED ZERO DIRECT NoValidation 50 --------
+   p,   prec: 98.11,   rec: 91.23,   f1: 94.55,   acc: 89.66
+   consist,   prec: 98.11,   rec: 91.23,   f1: 94.55,   acc: 89.66
+
+-------- x-ai/grok-code-fast-1 ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+   p,   prec: 92.31,   rec: 84.21,   f1: 88.07,   acc: 78.69
+   consist,   prec: 92.31,   rec: 84.21,   f1: 88.07,   acc: 78.69
+
+-------- gpt-5-nano-2025-08-07 ---------
+-------- ORDERED ZERO DIRECT NoValidation 50 --------
+
+Model: gpt-5-nano-2025-08-07 - ERROR: 400 Client Error: Bad Request for url: https://api.openai.com/v1/chat/completions
+
+-------- openai/gpt-5-nano-2025-08-07 ---------
+-------- ORDERED ZERO DIRECT NoValidation 50 --------
+
+Model: openai/gpt-5-nano-2025-08-07 - ERROR: 400 Client Error: Bad Request for url: https://api.openai.com/v1/chat/completions
+
+-------- openai/o4-mini-2025-04-16 ---------
+-------- ORDERED ZERO DIRECT NoValidation 50 --------
+
+Model: openai/o4-mini-2025-04-16 - ERROR: 400 Client Error: Bad Request for url: https://api.openai.com/v1/chat/completions
+
+-------- openai/gpt-5-mini-2025-08-07 ---------
+-------- ORDERED ZERO DIRECT NoValidation 50 --------
+
+Model: openai/gpt-5-mini-2025-08-07 - ERROR: 400 Client Error: Bad Request for url: https://api.openai.com/v1/chat/completions
+
+-------- qwen/qwen3.5-35b-a3b ---------
+-------- ORDERED ZERO DIRECT NoValidation 50 --------
+
+Model: qwen/qwen3.5-35b-a3b - ERROR: 400 Client Error: Bad Request for url: https://api.openai.com/v1/chat/completions
+
+-------- qwen/qwen3.5-35b-a3b ---------
+-------- ORDERED ZERO DIRECT NoValidation 50 --------
+   p,   prec: 100.0,   rec: 98.25,   f1: 99.12,   acc: 98.25
+   consist,   prec: 100.0,   rec: 98.25,   f1: 99.12,   acc: 98.25
+
+-------- qwen/qwen3.5-35b-a3b ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+   p,   prec: 100.0,   rec: 84.21,   f1: 91.43,   acc: 84.21
+   consist,   prec: 100.0,   rec: 84.21,   f1: 91.43,   acc: 84.21
+
+-------- qwen/qwen-2.5-7b-instruct ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+
+Model: qwen/qwen-2.5-7b-instruct - ERROR: 400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- qwen/qwen-2.5-7b-instruct ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+
+Model: qwen/qwen-2.5-7b-instruct - ERROR: 400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- qwen/qwen-2.5-vl-7b-instruct ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+
+Model: qwen/qwen-2.5-vl-7b-instruct - ERROR: 400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/o3-mini ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+
+-------- openai/o3-mini ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+
+Model: openai/o3-mini - ERROR: 400 Client Error: Bad Request for url: https://api.openai.com/v1/chat/completions
+
+-------- openai/o3-mini ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+
+Model: openai/o3-mini - ERROR: 401 Client Error: Unauthorized for url: https://api.openai.com/v1/responses
+
+-------- openai/o3-mini ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+
+Model: openai/o3-mini - ERROR: 401 Client Error: Unauthorized for url: https://api.openai.com/v1/responses
+
+-------- openai/o3-mini ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+
+Model: openai/o3-mini - ERROR: 400 Client Error: Bad Request for url: https://api.openai.com/v1/responses
+
+-------- openai/o3-mini ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+
+Model: openai/o3-mini - ERROR: 400 Client Error: Bad Request for url: https://api.openai.com/v1/responses
+
+-------- openai/o3-mini ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+
+Model: openai/o3-mini - ERROR: 400 Client Error: Bad Request for url: https://api.openai.com/v1/responses
+
+-------- o3-mini ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+
+Model: o3-mini - ERROR: 400 Client Error: Bad Request for url: https://api.openai.com/v1/responses
+
+-------- o3-mini ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+
+Model: o3-mini - ERROR: 'content'
+
+-------- o3-mini ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+   p,   prec: 92.16,   rec: 82.46,   f1: 87.04,   acc: 77.05
+   consist,   prec: 92.16,   rec: 82.46,   f1: 87.04,   acc: 77.05
+
+-------- o3-mini ---------
+-------- ORDERED ZERO COT NoValidation 50 --------
+   p,   prec: 82.46,   rec: 82.46,   f1: 82.46,   acc: 70.15
+   consist,   prec: 82.46,   rec: 82.46,   f1: 82.46,   acc: 70.15
+
+-------- o3-mini ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+   p,   prec: 96.43,   rec: 94.74,   f1: 95.58,   acc: 91.53
+   consist,   prec: 96.43,   rec: 94.74,   f1: 95.58,   acc: 91.53
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+
+Model: openai/gpt-oss-120b - ERROR: local variable 'cot_json_output' referenced before assignment
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+
+Model: openai/gpt-oss-120b - ERROR: 'validation_prompt'
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+
+Model: openai/gpt-oss-120b - ERROR: [Errno 2] No such file or directory: '/home/adbe/Doctorat/jorunal-wiley/GraphSafeLLM_Analyzer/prompts/consist/consist_validation.txt'
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+   p,   prec: 98.18,   rec: 94.74,   f1: 96.43,   acc: 93.1
+   consist,   prec: 98.18,   rec: 94.74,   f1: 96.43,   acc: 93.1
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+   p,   prec: 95.24,   rec: 90.91,   f1: 93.02,   acc: 86.96
+   la,   prec: 95.24,   rec: 90.91,   f1: 93.02,   acc: 86.96
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   relev,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 50 --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   relev,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 50 --------
+   p,   prec: 77.97,   rec: 80.7,   f1: 79.31,   acc: 65.71
+   consist,   prec: 77.97,   rec: 80.7,   f1: 79.31,   acc: 65.71
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 50 --------
+   p,   prec: 81.97,   rec: 87.72,   f1: 84.75,   acc: 73.53
+   consist,   prec: 81.97,   rec: 87.72,   f1: 84.75,   acc: 73.53
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 50 --------
+   p,   prec: 88.64,   rec: 88.64,   f1: 88.64,   acc: 79.59
+   la,   prec: 88.64,   rec: 88.64,   f1: 88.64,   acc: 79.59
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 50 --------
+   p,   prec: 82.46,   rec: 82.46,   f1: 82.46,   acc: 70.15
+   consist,   prec: 82.46,   rec: 82.46,   f1: 82.46,   acc: 70.15
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 50 --------
+   p,   prec: 83.93,   rec: 82.46,   f1: 83.19,   acc: 71.21
+   consist,   prec: 83.93,   rec: 82.46,   f1: 83.19,   acc: 71.21
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 50 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 50 --------
+
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   consist,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+   p,   prec: 95.12,   rec: 97.5,   f1: 96.3,   acc: 92.86
+   all,   prec: 95.12,   rec: 97.5,   f1: 96.3,   acc: 92.86
+
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+   p,   prec: 95.45,   rec: 95.45,   f1: 95.45,   acc: 91.3
+   la,   prec: 95.45,   rec: 95.45,   f1: 95.45,   acc: 91.3
+
+-------- x-ai/grok-4.1-fast ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   relev,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+-------- qwen/qwen3.5-flash-02-23 ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   relev,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+
+-------- qwen/qwen3.5-flash-02-23 ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+   p,   prec: 91.3,   rec: 95.45,   f1: 93.33,   acc: 87.5
+   la,   prec: 91.3,   rec: 95.45,   f1: 93.33,   acc: 87.5
+
+-------- qwen/qwen3.5-flash-02-23 ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+
+Model: qwen/qwen3.5-flash-02-23 - ERROR: argument of type 'NoneType' is not iterable
+
+-------- qwen/qwen3.5-35b-a3b ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+   p,   prec: 98.25,   rec: 98.25,   f1: 98.25,   acc: 96.55
+   consist,   prec: 98.25,   rec: 98.25,   f1: 98.25,   acc: 96.55
+
+-------- qwen/qwen3.5-35b-a3b ---------
+-------- ORDERED FEW DIRECT Validation 50 --------
+   p,   prec: 97.3,   rec: 90.0,   f1: 93.51,   acc: 87.8
+   all,   prec: 97.3,   rec: 90.0,   f1: 93.51,   acc: 87.8
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+
+Model: openai/gpt-oss-120b - ERROR: 400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+
+Model: openai/gpt-oss-120b - ERROR: 400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+
+Model: openai/gpt-oss-120b - ERROR: 400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+
+Model: openai/gpt-oss-120b - ERROR: 400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 50 --------
+
+Model: openai/gpt-oss-120b - ERROR: 400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+
+Model: openai/gpt-oss-120b - ERROR: 400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+   p,   prec: 54.67,   rec: 85.4,   f1: 66.67,   acc: 50.0
+   all,   prec: 54.67,   rec: 85.4,   f1: 66.67,   acc: 50.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 250 --------
+   p,   prec: 56.67,   rec: 74.45,   f1: 64.35,   acc: 47.44
+   all,   prec: 56.67,   rec: 74.45,   f1: 64.35,   acc: 47.44
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 250 --------
+   p,   prec: 69.94,   rec: 88.32,   f1: 78.06,   acc: 64.02
+   all,   prec: 69.94,   rec: 88.32,   f1: 78.06,   acc: 64.02
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 250 --------
+   p25,   prec: 100.0,   rec: 94.44,   f1: 97.14,   acc: 94.44
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 96.88,   rec: 100.0,   f1: 98.41,   acc: 96.88
+
+Model: openai/gpt-oss-120b - ERROR: 500 Server Error: Internal Server Error for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 250 --------
+   p125,   prec: 89.29,   rec: 86.21,   f1: 87.72,   acc: 78.12
+
+Model: openai/gpt-oss-120b - ERROR: 500 Server Error: Internal Server Error for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 250 --------
+   p150,   prec: 100.0,   rec: 90.0,   f1: 94.74,   acc: 90.0
+   p200,   prec: 100.0,   rec: 65.0,   f1: 78.79,   acc: 65.0
+   p250,   prec: 0.0,   rec: 0.0,   f1: 0.0,   acc: 0.0
+   all,   prec: 66.66666666666667,   rec: 51.666666666666664,   f1: 57.843333333333334,   acc: 51.666666666666664
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 250 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 250 --------
+   p250,   prec: 76.19,   rec: 80.0,   f1: 78.05,   acc: 64.0
+   all,   prec: 76.19,   rec: 80.0,   f1: 78.05,   acc: 64.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 50 --------
+   p,   prec: 97.44,   rec: 95.0,   f1: 96.2,   acc: 92.68
+   all,   prec: 97.44,   rec: 95.0,   f1: 96.2,   acc: 92.68
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 250 --------
+   p250,   prec: 86.84,   rec: 82.5,   f1: 84.62,   acc: 73.33
+   all,   prec: 86.84,   rec: 82.5,   f1: 84.62,   acc: 73.33
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 250 --------
+
+Model: openai/gpt-oss-120b - ERROR: 500 Server Error: Internal Server Error for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 250 --------
+   p25,   prec: 100.0,   rec: 94.44,   f1: 97.14,   acc: 94.44
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 96.88,   rec: 100.0,   f1: 98.41,   acc: 96.88
+ p150,   prec: 100.0,   rec: 90.0,   f1: 94.74,   acc: 90.0
+   p200,   prec: 100.0,   rec: 65.0,   f1: 78.79,   acc: 65.0
+   p250,   prec: 94.87,   rec: 92.5,   f1: 93.67,   acc: 88.1
+   all,   prec: 94.87,   rec: 92.5,   f1: 92.99,   acc: 88.1
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 250 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 250 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+   p25,   prec: 94.44,   rec: 94.44,   f1: 94.44,   acc: 89.47
+   all,   prec: 94.44,   rec: 94.44,   f1: 94.44,   acc: 89.47
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+
+Model: openai/gpt-oss-120b - ERROR: 500 Server Error: Internal Server Error for url: https://openrouter.ai/api/v1/chat/completions
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+  p25,   prec: 94.44,   rec: 94.44,   f1: 94.44,   acc: 89.47
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 100.0,   rec: 96.77,   f1: 98.36,   acc: 96.77
+   all,   prec: 95.455,   rec: 98.38499999999999,   f1: 96.8,   acc: 93.84
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+   p125,   prec: 96.67,   rec: 100.0,   f1: 98.31,   acc: 96.67
+   p150,   prec: 94.74,   rec: 90.0,   f1: 92.31,   acc: 85.71
+   all,   prec: 95.705,   rec: 95.0,   f1: 95.31,   acc: 91.19
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+ p25,   prec: 94.44,   rec: 94.44,   f1: 94.44,   acc: 89.47
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 100.0,   rec: 96.77,   f1: 98.36,   acc: 96.77
+   p125,   prec: 96.67,   rec: 100.0,   f1: 98.31,   acc: 96.67
+   p150,   prec: 94.74,   rec: 90.0,   f1: 92.31,   acc: 85.71
+   p200,   prec: 100.0,   rec: 90.0,   f1: 94.74,   acc: 90.0
+   p250,   prec: 92.11,   rec: 87.5,   f1: 89.74,   acc: 81.4
+   all,   prec: 96.055,   rec: 88.75,   f1: 92.24,   acc: 85.7
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 250 --------
+   p200,   prec: 100.0,   rec: 65.0,   f1: 78.79,   acc: 65.0
+   p250,   prec: 89.47,   rec: 85.0,   f1: 87.18,   acc: 77.27
+   all,   prec: 94.735,   rec: 75.0,   f1: 82.98500000000001,   acc: 71.13499999999999
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 300 --------
+
+Model: openai/gpt-oss-120b - ERROR: 'NoneType' object has no attribute 'strip'
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 300 --------
+   p,   prec: 83.33,   rec: 72.12,   f1: 77.32,   acc: 63.03
+   all,   prec: 83.33,   rec: 72.12,   f1: 77.32,   acc: 63.03
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 300 --------
+   p,   prec: 81.86,   rec: 84.62,   f1: 83.22,   acc: 71.26
+   all,   prec: 81.86,   rec: 84.62,   f1: 83.22,   acc: 71.26
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 300 --------
+   p,   prec: 67.19,   rec: 41.35,   f1: 51.19,   acc: 34.4
+   all,   prec: 67.19,   rec: 41.35,   f1: 51.19,   acc: 34.4
+
+
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 300 --------
+   p25,   prec: 94.44,   rec: 94.44,   f1: 94.44,   acc: 89.47
+   p50,   prec: 78.26,   rec: 90.0,   f1: 83.72,   acc: 72.0
+   p100,   prec: 96.88,   rec: 100.0,   f1: 98.41,   acc: 96.88
+   p125,   prec: 96.3,   rec: 89.66,   f1: 92.86,   acc: 86.67
+   p150,   prec: 94.74,   rec: 90.0,   f1: 92.31,   acc: 85.71
+   p200,   prec: 66.67,   rec: 90.0,   f1: 76.6,   acc: 62.07
+   p250,   prec: 85.0,   rec: 85.0,   f1: 85.0,   acc: 73.91
+   p300,   prec: 90.0,   rec: 85.71,   f1: 87.8,   acc: 78.26
+   all,   prec: 87.78625,   rec: 90.60125000000001,   f1: 88.8925,   acc: 80.62125
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 300 --------
+   p25,   prec: 94.44,   rec: 94.44,   f1: 94.44,   acc: 89.47
+   p50,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   p100,   prec: 96.88,   rec: 100.0,   f1: 98.41,   acc: 96.88
+   p125,   prec: 96.0,   rec: 82.76,   f1: 88.89,   acc: 80.0
+   p150,   prec: 100.0,   rec: 90.0,   f1: 94.74,   acc: 90.0
+   p200,   prec: 100.0,   rec: 90.0,   f1: 94.74,   acc: 90.0
+   **p250,   prec: 94.59,   rec: 87.5,   f1: 90.91,   acc: 83.33
+   p300,   prec: 94.74,   rec: 85.71,   f1: 90.0,   acc: 81.82
+   all,   prec: 97.08125,   rec: 91.30125000000001,   f1: 94.01625,   acc: 88.9375
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 300 --------
+   p25,   prec: 100.0,   rec: 94.44,   f1: 97.14,   acc: 94.44
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0
+   p125,   prec: 93.1,   rec: 93.1,   f1: 93.1,   acc: 87.1
+   p150,   prec: 100.0,   rec: 95.0,   f1: 97.44,   acc: 95.0
+   p200,   prec: 100.0,   rec: 90.0,   f1: 94.74,   acc: 90.0
+   p250,   prec: 88.37,   rec: 95.0,   f1: 91.57,   acc: 84.44
+   p300,   prec: 88.89,   rec: 76.19,   f1: 82.05,   acc: 69.57
+   all,   prec: 95.15875,   rec: 92.96625,   f1: 93.91,   acc: 88.9325
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+   p,   prec: 8.63,   rec: 24.29,   f1: 12.73,   acc: 6.8
+   consist,   prec: 8.63,   rec: 24.29,   f1: 12.73,   acc: 6.8
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+
+Model: openai/gpt-oss-120b - ERROR: argument of type 'NoneType' is not iterable
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+   p,   prec: 67.0,   rec: 88.89,   f1: 76.4,   acc: 61.82
+   consist,   prec: 67.0,   rec: 88.89,   f1: 76.4,   acc: 61.82
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 71.07,   rec: 91.5,   f1: 80.0,   acc: 66.67
+   consist,   prec: 71.07,   rec: 91.5,   f1: 80.0,   acc: 66.67
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 150 --------
+   p,   prec: 98.44,   rec: 98.44,   f1: 98.44,   acc: 96.92
+   relev,   prec: 98.44,   rec: 98.44,   f1: 98.44,   acc: 96.92
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 150 --------
+   p,   prec: 98.44,   rec: 98.44,   f1: 98.44,   acc: 96.92
+   relev,   prec: 98.44,   rec: 98.44,   f1: 98.44,   acc: 96.92
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+   p,   prec: 98.84,   rec: 98.84,   f1: 98.84,   acc: 97.7
+   relev,   prec: 98.84,   rec: 98.84,   f1: 98.84,   acc: 97.7
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+   p,   prec: 65.89,   rec: 98.84,   f1: 79.07,   acc: 65.38
+   relev,   prec: 65.89,   rec: 98.84,   f1: 79.07,   acc: 65.38
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 150 --------
+   p,   prec: 67.88,   rec: 92.08,   f1: 78.15,   acc: 64.14
+   la,   prec: 67.88,   rec: 92.08,   f1: 78.15,   acc: 64.14
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 150 --------
+   p,   prec: 85.0,   rec: 93.7,   f1: 89.14,   acc: 80.41
+   la,   prec: 85.0,   rec: 93.7,   f1: 89.14,   acc: 80.41
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 150 --------
+   p,   prec: 97.64,   rec: 97.64,   f1: 97.64,   acc: 95.38
+   la,   prec: 97.64,   rec: 97.64,   f1: 97.64,   acc: 95.38
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 150 --------
+   p,   prec: 99.21,   rec: 98.43,   f1: 98.81,   acc: 97.66
+   la,   prec: 99.21,   rec: 98.43,   f1: 98.81,   acc: 97.66
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT NoValidation 150 --------
+   p,   prec: 85.5,   rec: 88.19,   f1: 86.82,   acc: 76.71
+   la,   prec: 85.5,   rec: 88.19,   f1: 86.82,   acc: 76.71
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT NoValidation 200 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 96.25,   rec: 94.48,   f1: 95.36,   acc: 91.12
+   la,   prec: 96.25,   rec: 94.48,   f1: 95.36,   acc: 91.12
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+   p,   prec: 90.74,   rec: 90.18,   f1: 90.46,   acc: 82.58
+   la,   prec: 90.74,   rec: 90.18,   f1: 90.46,   acc: 82.58
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 300 --------
+   p25,   prec: 93.75,   rec: 83.33,   f1: 88.24,   acc: 78.95
+   p50,   prec: 78.26,   rec: 90.0,   f1: 83.72,   acc: 72.0
+   p100,   prec: 100.0,   rec: 93.55,   f1: 96.67,   acc: 93.55
+   p125,   prec: 92.59,   rec: 86.21,   f1: 89.29,   acc: 80.65
+   p150,   prec: 94.74,   rec: 90.0,   f1: 92.31,   acc: 85.71
+   p200,   prec: 90.0,   rec: 90.0,   f1: 90.0,   acc: 81.82
+   p250,   prec: 92.31,   rec: 90.0,   f1: 91.14,   acc: 83.72
+   p300,   prec: 92.11,   rec: 83.33,   f1: 87.5,   acc: 77.78
+   all,   prec: 91.72000000000001,   rec: 88.3025,   f1: 89.85875,   acc: 81.7725
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 300 --------
+   p,   prec: 61.09,   rec: 84.83,   f1: 71.03,   acc: 55.08
+   all,   prec: 61.09,   rec: 84.83,   f1: 71.03,   acc: 55.08
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 300 --------
+   p,   prec: 82.27,   rec: 85.78,   f1: 83.99,   acc: 72.4
+   all,   prec: 82.27,   rec: 85.78,   f1: 83.99,   acc: 72.4
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 300 --------
+   p25,   prec: 100.0,   rec: 94.44,   f1: 97.14,   acc: 94.44
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 81.82,   rec: 87.1,   f1: 84.38,   acc: 72.97
+   p125,   prec: 89.66,   rec: 89.66,   f1: 89.66,   acc: 81.25
+   p150,   prec: 100.0,   rec: 95.0,   f1: 97.44,   acc: 95.0
+   p200,   prec: 90.0,   rec: 90.0,   f1: 90.0,   acc: 81.82
+   p250,   prec: 84.09,   rec: 92.5,   f1: 88.1,   acc: 78.72
+   p300,   prec: 91.89,   rec: 80.95,   f1: 86.08,   acc: 75.56
+   all,   prec: 91.04625,   rec: 91.20625,   f1: 91.005,   acc: 83.83375000000001
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 300 --------
+   p25,   prec: 100.0,   rec: 94.44,   f1: 97.14,   acc: 94.44
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 96.88,   rec: 100.0,   f1: 98.41,   acc: 96.88
+   p125,   prec: 96.43,   rec: 93.1,   f1: 94.74,   acc: 90.0
+   p150,   prec: 100.0,   rec: 95.0,   f1: 97.44,   acc: 95.0
+   p200,   prec: 89.47,   rec: 85.0,   f1: 87.18,   acc: 77.27
+   p250,   prec: 91.89,   rec: 85.0,   f1: 88.31,   acc: 79.07
+   p300,   prec: 94.87,   rec: 88.1,   f1: 91.36,   acc: 84.09
+   all,   prec: 95.05624999999999,   rec: 92.58,   f1: 93.7275,   acc: 88.4575
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p25,   prec: 100.0,   rec: 94.44,   f1: 97.14,   acc: 94.44
+   p50,   prec: 90.91,   rec: 100.0,   f1: 95.24,   acc: 90.91
+   p100,   prec: 96.88,   rec: 100.0,   f1: 98.41,   acc: 96.88
+   p125,   prec: 92.59,   rec: 92.59,   f1: 92.59,   acc: 86.21
+   p150,   prec: 95.0,   rec: 86.36,   f1: 90.48,   acc: 82.61
+   p200,   prec: 100.0,   rec: 86.96,   f1: 93.02,   acc: 86.96
+   all,   prec: 95.89666666666666,   rec: 93.39166666666667,   f1: 94.48,   acc: 89.66833333333334
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 250 --------
+   p25,   prec: 100.0,   rec: 94.44,   f1: 97.14,   acc: 94.44
+   p50,   prec: 86.96,   rec: 100.0,   f1: 93.02,   acc: 86.96
+   p100,   prec: 96.88,   rec: 100.0,   f1: 98.41,   acc: 96.88
+   p125,   prec: 93.1,   rec: 93.1,   f1: 93.1,   acc: 87.1
+   p150,   prec: 100.0,   rec: 95.0,   f1: 97.44,   acc: 95.0
+   p200,   prec: 100.0,   rec: 86.96,   f1: 93.02,   acc: 86.96
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 250 --------
+   p250,   prec: 94.87,   rec: 92.5,   f1: 93.67,   acc: 88.1
+   all,   prec: 94.87,   rec: 92.5,   f1: 95.11,   acc: 88.1
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 250 --------
+
+Model: openai/gpt-oss-120b - ERROR: Expecting value: line 4703 column 1 (char 25861)
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 250 --------
+   p,   prec: 58.0,   rec: 82.86,   f1: 68.24,   acc: 51.79
+   all,   prec: 58.0,   rec: 82.86,   f1: 68.24,   acc: 51.79
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 300 --------
+   p,   prec: 58.06,   rec: 85.31,   f1: 69.1,   acc: 52.79
+   all,   prec: 58.06,   rec: 85.31,   f1: 69.1,   acc: 52.79
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 250 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 250 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 250 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 250 --------
+   p,   prec: 67.63,   rec: 83.57,   f1: 74.76,   acc: 59.69
+   all,   prec: 67.63,   rec: 83.57,   f1: 74.76,   acc: 59.69
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 300 --------
+   p,   prec: 74.68,   rec: 82.46,   f1: 78.38,   acc: 64.44
+   all,   prec: 74.68,   rec: 82.46,   f1: 78.38,   acc: 64.44
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 200 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 200 --------
+
+Model: openai/gpt-oss-120b - ERROR: Expecting value: line 6053 column 1 (char 33286)
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 200 --------
+
+Model: openai/gpt-oss-120b - ERROR: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 200 --------
+   p,   prec: 72.25,   rec: 89.29,   f1: 79.87,   acc: 66.49
+   all,   prec: 72.25,   rec: 89.29,   f1: 79.87,   acc: 66.49
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+   p,   prec: 69.33,   rec: 74.29,   f1: 71.72,   acc: 55.91
+   all,   prec: 69.33,   rec: 74.29,   f1: 71.72,   acc: 55.91
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT NoValidation 200 --------
+   p,   prec: 98.26,   rec: 98.26,   f1: 98.26,   acc: 96.57
+   relev,   prec: 98.26,   rec: 98.26,   f1: 98.26,   acc: 96.57
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT NoValidation 200 --------
+   p,   prec: 70.39,   rec: 88.96,   f1: 78.59,   acc: 64.73
+   la,   prec: 70.39,   rec: 88.96,   f1: 78.59,   acc: 64.73
+
+   -------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+   p,   prec: 79.75,   rec: 79.75,   f1: 79.75,   acc: 66.33
+   la,   prec: 79.75,   rec: 79.75,   f1: 79.75,   acc: 66.33
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 200 --------
+   p,   prec: 90.74,   rec: 90.18,   f1: 90.46,   acc: 82.58
+   la,   prec: 90.74,   rec: 90.18,   f1: 90.46,   acc: 82.58
+
+
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 94.3,   rec: 91.41,   f1: 92.83,   acc: 86.63
+   la,   prec: 94.3,   rec: 91.41,   f1: 92.83,   acc: 86.63
+
+
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT Validation 200 --------
+   p,   prec: 70.39,   rec: 88.96,   f1: 78.59,   acc: 64.73
+   la,   prec: 70.39,   rec: 88.96,   f1: 78.59,   acc: 64.73
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 94.85,   rec: 90.64,   f1: 92.7,   acc: 86.38
+   consist,   prec: 94.85,   rec: 90.64,   f1: 92.7,   acc: 86.38
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 200 --------
+   p,   prec: 95.0,   rec: 93.6,   f1: 94.29,   acc: 89.2
+   consist,   prec: 95.0,   rec: 93.6,   f1: 94.29,   acc: 89.2
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT NoValidation 200 --------
+   p,   prec: 92.35,   rec: 89.16,   f1: 90.73,   acc: 83.03
+   consist,   prec: 92.35,   rec: 89.16,   f1: 90.73,   acc: 83.03
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT NoValidation 200 --------
+   p,   prec: 95.0,   rec: 93.6,   f1: 94.29,   acc: 89.2
+   consist,   prec: 95.0,   rec: 93.6,   f1: 94.29,   acc: 89.2
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 200 --------
+   p,   prec: 94.39,   rec: 91.13,   f1: 92.73,   acc: 86.45
+   consist,   prec: 94.39,   rec: 91.13,   f1: 92.73,   acc: 86.45
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 200 --------
+   p,   prec: 82.52,   rec: 98.84,   f1: 89.95,   acc: 81.73
+   relev,   prec: 82.52,   rec: 98.84,   f1: 89.95,   acc: 81.73
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+   p,   prec: 82.52,   rec: 98.84,   f1: 89.95,   acc: 81.73
+   relev,   prec: 82.52,   rec: 98.84,   f1: 89.95,   acc: 81.73
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT NoValidation 200 --------
+   p,   prec: 97.7,   rec: 98.84,   f1: 98.27,   acc: 96.59
+   relev,   prec: 97.7,   rec: 98.84,   f1: 98.27,   acc: 96.59
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 89.39,   rec: 84.29,   f1: 86.76,   acc: 76.62
+   all,   prec: 89.39,   rec: 84.29,   f1: 86.76,   acc: 76.62
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+   p,   prec: 96.39,   rec: 92.12,   f1: 94.21,   acc: 89.05
+   consist,   prec: 96.39,   rec: 92.12,   f1: 94.21,   acc: 89.05
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT NoValidation 200 --------
+   p,   prec: 88.41,   rec: 90.15,   f1: 89.27,   acc: 80.62
+   consist,   prec: 88.41,   rec: 90.15,   f1: 89.27,   acc: 80.62
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 200 --------
+   p,   prec: 89.37,   rec: 91.13,   f1: 90.24,   acc: 82.22
+   consist,   prec: 89.37,   rec: 91.13,   f1: 90.24,   acc: 82.22
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT NoValidation 200 --------
+   p,   prec: 89.32,   rec: 90.64,   f1: 89.98,   acc: 81.78
+   consist,   prec: 89.32,   rec: 90.64,   f1: 89.98,   acc: 81.78
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT Validation 200 --------
+   p,   prec: 96.94,   rec: 93.6,   f1: 95.24,   acc: 90.91
+   consist,   prec: 96.94,   rec: 93.6,   f1: 95.24,   acc: 90.91
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT NoValidation 200 --------
+   p,   prec: 93.4,   rec: 90.64,   f1: 92.0,   acc: 85.19
+   consist,   prec: 93.4,   rec: 90.64,   f1: 92.0,   acc: 85.19
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 200 --------
+   p,   prec: 96.98,   rec: 95.07,   f1: 96.02,   acc: 92.34
+   consist,   prec: 96.98,   rec: 95.07,   f1: 96.02,   acc: 92.34
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT Validation 200 --------
+   p,   prec: 93.88,   rec: 90.64,   f1: 92.23,   acc: 85.58
+   consist,   prec: 93.88,   rec: 90.64,   f1: 92.23,   acc: 85.58
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 96.92,   rec: 93.1,   f1: 94.97,   acc: 90.43
+   consist,   prec: 96.92,   rec: 93.1,   f1: 94.97,   acc: 90.43
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 200 --------
+   p,   prec: 73.53,   rec: 92.02,   f1: 81.74,   acc: 69.12
+   la,   prec: 73.53,   rec: 92.02,   f1: 81.74,   acc: 69.12
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT NoValidation 200 --------
+   p,   prec: 70.39,   rec: 88.96,   f1: 78.59,   acc: 64.73
+   la,   prec: 70.39,   rec: 88.96,   f1: 78.59,   acc: 64.73
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT Validation 200 --------
+   p,   prec: 90.24,   rec: 45.4,   f1: 60.41,   acc: 43.27
+   la,   prec: 90.24,   rec: 45.4,   f1: 60.41,   acc: 43.27
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT Validation 200 --------
+   p,   prec: 91.1,   rec: 81.6,   f1: 86.08,   acc: 75.57
+   la,   prec: 91.1,   rec: 81.6,   f1: 86.08,   acc: 75.57
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT Validation 200 --------
+   p,   prec: 93.87,   rec: 93.87,   f1: 93.87,   acc: 88.44
+   la,   prec: 93.87,   rec: 93.87,   f1: 93.87,   acc: 88.44
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT Validation 200 --------
+   p,   prec: 96.1,   rec: 90.8,   f1: 93.38,   acc: 87.57
+   la,   prec: 96.1,   rec: 90.8,   f1: 93.38,   acc: 87.57
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 94.97,   rec: 92.64,   f1: 93.79,   acc: 88.3
+   la,   prec: 94.97,   rec: 92.64,   f1: 93.79,   acc: 88.3
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 98.14,   rec: 91.86,   f1: 94.89,   acc: 90.29
+   relev,   prec: 98.14,   rec: 91.86,   f1: 94.89,   acc: 90.29
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+   p,   prec: 98.83,   rec: 98.26,   f1: 98.54,   acc: 97.13
+   relev,   prec: 98.83,   rec: 98.26,   f1: 98.54,   acc: 97.13
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT NoValidation 200 --------
+   p,   prec: 97.69,   rec: 98.26,   f1: 97.97,   acc: 96.02
+   relev,   prec: 97.69,   rec: 98.26,   f1: 97.97,   acc: 96.02
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 92.75,   rec: 91.43,   f1: 92.09,   acc: 85.33
+   all,   prec: 92.75,   rec: 91.43,   f1: 92.09,   acc: 85.33
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT NoValidation 200 --------
+   p,   prec: 84.36,   rec: 87.68,   f1: 85.99,   acc: 75.42
+   consist,   prec: 84.36,   rec: 87.68,   f1: 85.99,   acc: 75.42
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW DIRECT Validation 200 --------
+   p,   prec: 97.93,   rec: 93.1,   f1: 95.45,   acc: 91.3
+   consist,   prec: 97.93,   rec: 93.1,   f1: 95.45,   acc: 91.3
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 96.55,   rec: 96.55,   f1: 96.55,   acc: 93.33
+   consist,   prec: 96.55,   rec: 96.55,   f1: 96.55,   acc: 93.33
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 96.91,   rec: 96.32,   f1: 96.62,   acc: 93.45
+   la,   prec: 96.91,   rec: 96.32,   f1: 96.62,   acc: 93.45
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 200 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO DIRECT Validation 200 --------
+   p,   prec: 96.43,   rec: 93.1,   f1: 94.74,   acc: 90.0
+   consist,   prec: 96.43,   rec: 93.1,   f1: 94.74,   acc: 90.0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT Validation 200 --------
+   p,   prec: 97.98,   rec: 95.57,   f1: 96.76,   acc: 93.72
+   consist,   prec: 97.98,   rec: 95.57,   f1: 96.76,   acc: 93.72
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED ZERO COT Validation 200 --------
+   p,   prec: 97.47,   rec: 95.07,   f1: 96.26,   acc: 92.79
+   consist,   prec: 97.47,   rec: 95.07,   f1: 96.26,   acc: 92.79
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 98.84,   rec: 98.84,   f1: 98.84,   acc: 97.7
+   relev,   prec: 98.84,   rec: 98.84,   f1: 98.84,   acc: 97.7
+
+-------- openai/gpt-oss-120b ---------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation Iterations 0 200 --------
+   p,   prec: 95.74,   rec: 82.82,   f1: 88.82,   acc: 79.88
+   la,   prec: 95.74,   rec: 82.82,   f1: 88.82,   acc: 79.88
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 87.43,   rec: 89.57,   f1: 88.48,   acc: 79.35, iterations: 0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 96.32,   rec: 96.32,   f1: 96.32,   acc: 92.9, iterations: 0
+   la,   prec: 96.32,   rec: 96.32,   f1: 96.32,   acc: 92.9, iterations: 0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 25 --------
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 20 --------
+   p,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0, iterations: 0
+   la,   prec: 100.0,   rec: 100.0,   f1: 100.0,   acc: 100.0, iterations: 0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 20 --------
+   p,   prec: 94.44,   rec: 94.44,   f1: 94.44,   acc: 89.47, iterations: 0
+   la,   prec: 94.44,   rec: 94.44,   f1: 94.44,   acc: 89.47, iterations: 0
+
+-------- openai/gpt-oss-120b ---------
+-------- ORDERED FEW COT Validation 200 --------
+   p,   prec: 93.75,   rec: 92.02,   f1: 92.88,   acc: 86.71, iterations: 0
+   la,   prec: 93.75,   rec: 92.02,   f1: 92.88,   acc: 86.71, iterations: 0

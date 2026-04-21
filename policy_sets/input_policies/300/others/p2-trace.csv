@@ -1,0 +1,92 @@
+R1, grant create on nodes (e:Event) where e.severity > 3 to SeniorDoctor; | Element_Condition_Bypass | none;
+R2, grant add{severity} on nodes (e:Event) to SeniorDoctor; | Element_Condition_Bypass | remove R2;
+R3, grant delete on nodes (e:Event) where e.status = "critical" to SeniorDoctor; | Element_Condition_Bypass | none;
+R4, grant modify{status} on nodes (e:Event) to SeniorDoctor; | Element_Condition_Bypass | remove R4;
+
+R5, deny create on nodes (p:Patient) where p.age < 18 to Intern; | Element_Condition_Bypass | none;
+R6, grant modify{*} on nodes (p:Patient) to Intern; | Element_Condition_Bypass | add deny modify{age} on nodes (p:Patient) to Intern;
+R7, grant traverse on nodes (p:Patient) where p.condition = "stable" to Intern; | Element_Condition_Bypass | none;
+R8, grant remove{condition} on nodes (p:Patient) to Intern; | Element_Condition_Bypass | remove R8;
+
+R9, grant delete on relationships (t:TREATS) where t.priority >= 5 to HeadPhysician; | Element_Condition_Bypass | none;
+R10, grant add{*} on relationships (t:TREATS) to HeadPhysician; | Element_Condition_Bypass | add deny add{priority} on relationships (t:TREATS) to HeadPhysician;
+R11, grant traverse on relationships (t:TREATS) where t.status = "active" to HeadPhysician; | Element_Condition_Bypass | none;
+R12, grant modify{status} on relationships (t:TREATS) to HeadPhysician; | Element_Condition_Bypass | remove R12;
+
+R13, grant create on nodes (t:Treatment) where t.cost > 10000 to BillingManager; | Element_Condition_Bypass | none;
+R14, grant modify{cost} on nodes (t:Treatment) to BillingManager; | Element_Condition_Bypass | remove R14;
+R15, grant delete on nodes (t:Treatment) where t.approved = "no" to BillingManager; | Element_Condition_Bypass | none;
+R16, grant add{*} on nodes (t:Treatment) to BillingManager; | Element_Condition_Bypass | add deny add{approved} on nodes (t:Treatment) to BillingManager;
+
+R17, grant create on relationships (p:PRESCRIBES) where p.dosage > 500 to Doctor; | Element_Condition_Bypass | none;
+R18, grant remove{dosage} on relationships (p:PRESCRIBES) to Doctor; | Element_Condition_Bypass | remove R18;
+R19, grant traverse on relationships (p:PRESCRIBES) where p.frequency = "daily" to Doctor; | Element_Condition_Bypass | none;
+R20, grant modify{*} on relationships (p:PRESCRIBES) to Doctor; | Element_Condition_Bypass | add deny modify{frequency} on relationships (p:PRESCRIBES) to Doctor;
+
+R21, deny modify{diagnosis} on nodes (p:Patient) to Nurse; | Modify_Bypass_AddRemove | none;
+R22, grant add{diagnosis} on nodes (p:Patient) to Nurse; | Modify_Bypass_AddRemove | remove R22;
+R23, grant remove{diagnosis} on nodes (p:Patient) to Nurse; | Modify_Bypass_AddRemove | none;
+
+R24, deny modify{*} on nodes (m:MedicalRecord) to Intern; | Modify_Bypass_AddRemove | none;
+R25, grant add{*} on nodes (m:MedicalRecord) to Intern; | Modify_Bypass_AddRemove | add deny add{notes} on nodes (m:MedicalRecord) to Intern;
+R26, grant remove{notes} on nodes (m:MedicalRecord) to Intern; | Modify_Bypass_AddRemove | none;
+
+R27, deny modify{allergy} on nodes (p:Patient) to Resident; | Modify_Bypass_AddRemove | none;
+R28, grant add{allergy} on nodes (p:Patient) to Resident; | Modify_Bypass_AddRemove | remove R28;
+R29, grant remove{allergy} on nodes (p:Patient) to Resident; | Modify_Bypass_AddRemove | none;
+
+R30, deny modify{*} on relationships (t:TREATS) to MedicalAssistant; | Modify_Bypass_AddRemove | none;
+R31, grant add{*} on relationships (t:TREATS) to MedicalAssistant; | Modify_Bypass_AddRemove | add deny add{notes} on relationships (t:TREATS) to MedicalAssistant;
+R32, grant remove{notes} on relationships (t:TREATS) to MedicalAssistant; | Modify_Bypass_AddRemove | none;
+
+R33, deny modify{room} on nodes (e:Event) to Receptionist; | Modify_Bypass_AddRemove | none;
+R34, grant add{room} on nodes (e:Event) to Receptionist; | Modify_Bypass_AddRemove | remove R34;
+R35, grant remove{room} on nodes (e:Event) to Receptionist; | Modify_Bypass_AddRemove | none;
+
+R36, deny modify{*} on nodes (t:Treatment) to Pharmacist; | Modify_Bypass_AddRemove | none;
+R37, grant add{*} on nodes (t:Treatment) to Pharmacist; | Modify_Bypass_AddRemove | add deny add{dosage} on nodes (t:Treatment) to Pharmacist;
+R38, grant remove{dosage} on nodes (t:Treatment) to Pharmacist; | Modify_Bypass_AddRemove | none;
+
+R39, grant create on nodes (d:Doctor) where d.experience >= 10 to HospitalAdmin; | Element_Condition_Bypass | none;
+R40, grant modify{experience} on nodes (d:Doctor) to HospitalAdmin; | Element_Condition_Bypass | remove R40;
+R41, grant delete on nodes (i:Intern) where i.performance < 2 to HospitalAdmin; | Element_Condition_Bypass | none;
+R42, grant add{*} on nodes (i:Intern) to HospitalAdmin; | Element_Condition_Bypass | add deny add{performance} on nodes (i:Intern) to HospitalAdmin;
+
+R43, grant create on relationships (a:ASSIGNED_TO) where a.shift = "night" to Supervisor; | Element_Condition_Bypass | none;
+R44, grant remove{shift} on relationships (a:ASSIGNED_TO) to Supervisor; | Element_Condition_Bypass | remove R44;
+R45, grant traverse on nodes (p:Patient) where p.insurance = "premium" to Supervisor; | Element_Condition_Bypass | none;
+R46, grant modify{*} on nodes (p:Patient) to Supervisor; | Element_Condition_Bypass | add deny modify{insurance} on nodes (p:Patient) to Supervisor;
+
+R47, deny modify{medication} on relationships (p:PRESCRIBES) to JuniorDoctor; | Modify_Bypass_AddRemove | none;
+R48, grant add{medication} on relationships (p:PRESCRIBES) to JuniorDoctor; | Modify_Bypass_AddRemove | remove R48;
+R49, grant remove{medication} on relationships (p:PRESCRIBES) to JuniorDoctor; | Modify_Bypass_AddRemove | none;
+
+R50, deny modify{*} on nodes (e:Event) to LabTechnician; | Modify_Bypass_AddRemove | none;
+R51, grant add{*} on nodes (e:Event) to LabTechnician; | Modify_Bypass_AddRemove | add deny add{result} on nodes (e:Event) to LabTechnician;
+R52, grant remove{result} on nodes (e:Event) to LabTechnician; | Modify_Bypass_AddRemove | none;
+
+R53, deny modify{status} on nodes (t:Treatment) to CareCoordinator; | Modify_Bypass_AddRemove | none;
+R54, grant add{status} on nodes (t:Treatment) to CareCoordinator; | Modify_Bypass_AddRemove | remove R54;
+R55, grant remove{status} on nodes (t:Treatment) to CareCoordinator; | Modify_Bypass_AddRemove | none;
+
+R56, deny modify{*} on relationships (t:TREATS) to ComplianceOfficer; | Modify_Bypass_AddRemove | none;
+R57, grant add{*} on relationships (t:TREATS) to ComplianceOfficer; | Modify_Bypass_AddRemove | add deny add{priority} on relationships (t:TREATS) to ComplianceOfficer;
+R58, grant remove{priority} on relationships (t:TREATS) to ComplianceOfficer; | Modify_Bypass_AddRemove | none;
+
+R59, grant delete on nodes (m:MedicalRecord) where m.confidentiality = "high" to DataManager; | Element_Condition_Bypass | none;
+R60, grant modify{confidentiality} on nodes (m:MedicalRecord) to DataManager; | Element_Condition_Bypass | remove R60;
+R61, grant create on nodes (p:Patient) where p.riskScore > 7 to DataManager; | Element_Condition_Bypass | none;
+R62, grant add{*} on nodes (p:Patient) to DataManager; | Element_Condition_Bypass | add deny add{riskScore} on nodes (p:Patient) to DataManager;
+
+R63, grant traverse on relationships (f:FOLLOWS_UP) where f.interval < 30 to NurseManager; | Element_Condition_Bypass | none;
+R64, grant remove{interval} on relationships (f:FOLLOWS_UP) to NurseManager; | Element_Condition_Bypass | remove R64;
+R65, grant create on nodes (e:Event) where e.roomNumber >= 200 to NurseManager; | Element_Condition_Bypass | none;
+R66, grant modify{*} on nodes (e:Event) to NurseManager; | Element_Condition_Bypass | add deny modify{roomNumber} on nodes (e:Event) to NurseManager;
+
+R67, deny modify{treatmentPlan} on nodes (p:Patient) to CaseWorker; | Modify_Bypass_AddRemove | none;
+R68, grant add{treatmentPlan} on nodes (p:Patient) to CaseWorker; | Modify_Bypass_AddRemove | remove R68;
+R69, grant remove{treatmentPlan} on nodes (p:Patient) to CaseWorker; | Modify_Bypass_AddRemove | none;
+
+R70, deny modify{*} on nodes (d:Doctor) to HRManager; | Modify_Bypass_AddRemove | none;
+R71, grant add{*} on nodes (d:Doctor) to HRManager; | Modify_Bypass_AddRemove | add deny add{salary} on nodes (d:Doctor) to HRManager;
+R72, grant remove{salary} on nodes (d:Doctor) to HRManager; | Modify_Bypass_AddRemove | none;

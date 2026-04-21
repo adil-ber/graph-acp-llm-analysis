@@ -6,23 +6,49 @@ import csv
 
 class Policy:
   
-    def __init__(self, policy_id,type, property_checked=None):
+    def __init__(self, policy_id,type, policy_size, property_checked=None):
         self.policy_id=policy_id
+        self.policy_size = policy_size
         
         if(type=="expected"):        
-            self.rules = self.load_rules(f"policy_sets/{type}_policies/{property_checked}",f"{policy_id}.csv")
+            self.rules = self.load_rules(f"policy_sets/{type}_policies/{property_checked}/{policy_size}",f"{policy_id}.csv")
 
         if(type=="input"):
-            self.rules = self.load_rules(f"policy_sets/{type}_policies",f"{policy_id}.csv")
+            self.rules = self.load_rules(f"policy_sets/{type}_policies/{policy_size}",f"{policy_id}.csv")
             self.invert_rules = self.rules.copy()
             self.invert_rule_to_rule = defaultdict(dict)
             self.grouped_conditions = defaultdict(dict)
             self.condition_to_rule = defaultdict(dict)
-            
+            self.grouped_rules = defaultdict(list)
+            self.grouped_elements = defaultdict(list)
             self.preprocessor = PolicyPreprocessor(self)
+            self.grouped_rules_text = self.preprocessor.acr_groups_to_string(self.grouped_rules)
+            self.grouped_elements_text = self.preprocessor.acr_groups_to_string(self.grouped_elements)
+            self.grouped_conditions_text = self.preprocessor.condition_groups_to_string(self.grouped_conditions)
+            
+    # ---------------------------------------------------------
+    
+    
+    def grouped_rule(self):
+        return self.grouped_rules
+    
+    def group_rules(self):
+        
+        self.preprocessor.group_rules(self)
+        
+        #for relev
+        self.grouped_conditions_text = self.preprocessor.condition_groups_to_string(self.grouped_conditions)
+        #for least astonishment
+        self.grouped_rules_text = self.preprocessor.acr_groups_to_string(self.grouped_rules)
+        #for consist
+        self.grouped_elements_text = self.preprocessor.acr_groups_to_string(self.grouped_elements)
+        
+        
+    
 
 
-
+    # ---------------------------------------------------------
+    
     def load_rules(self,type,file_path):
         rules = {}  # use a dict, not a list
 
@@ -63,7 +89,6 @@ class Policy:
 
             return rules
 
-    # ---------------------------------------------------------
 
     def policy_export(self):
         base_dir = os.path.dirname(os.path.abspath(__file__))

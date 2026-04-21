@@ -1,0 +1,16 @@
+rule_id,rule_text;
+R6,grant create on nodes (e:Document) to B;
+R7,grant traverse on nodes (e:Document) to B;
+R8,deny traverse on nodes (e:Document) to B;
+R11,deny traverse on relationships (*) to C;
+R13,grant traverse on nodes (e:Project) to C;
+R14,deny traverse on nodes (*) to C;
+R15,grant traverse on nodes (e:Employee) where e.salary != 5000 AND e.salary > 5000 to D;
+R18,grant delete on nodes (d:Document) where d.status = archived to Editor;
+R21,grant modify{*} on nodes (p:Post) to Moderator;
+R22,deny modify{*} on nodes (c:Customer) to Support;
+R24,grant remove{phone} on nodes (c:Customer) to Support;
+R25,deny modify{role} on nodes (u:User) to IT_Support;
+R27,grant remove{role} on nodes (u:User) to IT_Support;
+
+R101,deny create on nodes (e:Document) to B;

@@ -1,0 +1,14 @@
+rule_id,rule_text
+R23,grant traverse on nodes (e:Asset) to E;
+R24,grant create on nodes (e:Asset) to E;
+R25,deny traverse on nodes (e:Secret) to C;
+R26,grant add{email} on nodes (u:Account) where u.owner = true to ProfileEditor;
+R27,grant read{email} on nodes (u:Account) to ProfileEditor;
+R30,grant read{address} on nodes (u:Account) to AddressEditor;
+R31,deny read{*} on nodes (u:Account) to AddressEditor;
+R33,grant read{diagnosis} on nodes (p:MedicalFile) to Doctor;
+R34,deny read{diagnosis} on nodes (p:MedicalFile) to Doctor;
+R104,grant add{status} on relationships (o:Purchase) where o.ownerId = user.id to OrderManager;
+R36,grant read{status} on relationships (o:Purchase) to OrderManager;
+R42,grant traverse on nodes (i:Invoice) where i.amount > 500 to G;
+R45,grant traverse on nodes (u:User) where u.age >= 18 AND u.age <= 65 to G;

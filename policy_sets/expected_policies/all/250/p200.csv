@@ -1,0 +1,39 @@
+rule_id,rule_text
+
+R170,grant delete on nodes (d:Document) where d.status = archived to EditorEditor;
+
+
+R173,grant modify{*} on nodes (p:Post) to ModeratorModerator;
+R174,deny modify{*} on nodes (c:Customer) to SupportSupport;
+
+R176,grant remove{phone} on nodes (c:Customer) to SupportSupport;
+R177,deny modify{role} on nodes (u:User) to IT_SupportIT_Support;
+R178,grant add{role} on nodes (u:User) to IT_SupportIT_Support;
+R179,grant remove{role} on nodes (u:User) to IT_SupportIT_Support;
+
+
+
+
+
+R185,grant create on nodes (e:Document) to YY;
+R186,grant traverse on nodes (e:Document) to YY;
+R187,deny traverse on nodes (e:Document) to YY;
+R313,deny create on nodes (e:Document) to YY;
+
+R190,deny traverse on relationships (*) to XX;
+R191,grant create on nodes (*) where e.level < 5 to XX;
+R192,grant traverse on nodes (e:Project) to XX;
+R193,deny traverse on nodes (*) to XX;
+R194,grant traverse on nodes (e:Employee) where e.salary != 5000 AND e.salary > 5000 to WW;
+
+
+R197,grant delete on nodes (d:Document) where d.status = archived to Editor_Editor;
+
+
+R200,grant modify{*} on nodes (p:Post) to Moderator_Moderator;
+R201,deny modify{*} on nodes (c:Customer) to Support_Support;
+
+R203,grant remove{phone} on nodes (c:Customer) to Support_Support;
+R204,deny modify{role} on nodes (u:User) to IT_Support_IT_Support;
+R205,grant add{role} on nodes (u:User) to IT_Support_IT_Support;
+R206,grant remove{role} on nodes (u:User) to IT_Support_IT_Support;

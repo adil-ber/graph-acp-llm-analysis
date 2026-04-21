@@ -1,0 +1,21 @@
+rule_id,rule_text
+R26,grant add{email} on nodes (u:Account) where u.owner = true to ProfileEditor;
+R27,grant read{email} on nodes (u:Account) to ProfileEditor;
+R30,grant read{address} on nodes (u:Account) to AddressEditor;
+R31,deny read{*} on nodes (u:Account) to AddressEditor;
+R33,grant read{diagnosis} on nodes (p:MedicalFile) to Doctor;
+R34,deny read{diagnosis} on nodes (p:MedicalFile) to Doctor;
+R204,grant add{status} on relationships (o:Purchase) where o.ownerId = user.id to OrderManager;
+R36,grant read{status} on relationships (o:Purchase) to OrderManager;
+R42,grant traverse on nodes (i:Invoice) where i.amount > 500 to G;
+R45,grant traverse on nodes (u:User) where u.age >= 18 AND u.age <= 65 to G;
+R48,grant traverse on nodes (o:Order) where o.status = "paid" to G;
+R51,grant traverse on nodes (a:Asset) where a.value > 500 to G;
+R54,grant traverse on nodes (d:Document) where true to G;
+R56,grant traverse on nodes (e:Employee) where e.age >= 18 AND e.age <= 18 to G;
+R57,grant traverse on nodes (e:Employee) where e.level > 3 AND e.level >= 4 to G;
+R58,grant traverse on nodes (e:Employee) where e.salary != 5000 AND e.salary > 5000 to G;
+R59,grant create on nodes (e:Player) to B;
+R60,grant traverse on nodes (e:Player) to B;
+R61,deny traverse on nodes (e:Player) where v.score > 85 to B;
+R203,deny create on nodes (e:Player) where v.score > 85 to B;

@@ -3,7 +3,6 @@
 <div align="center">
 
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![LLM Support](https://img.shields.io/badge/LLM-GPT%2C%20DeepSeek%2C%20Mistral-orange)
 
@@ -34,7 +33,6 @@ This project bridges the gap between traditional security analysis and modern AI
 ### ⚙️ **Professional Tooling**
 - **Modular Architecture**: Easy to extend with custom analyzers
 - **Batch Processing**: Handle large policy sets efficiently
-- **Validation Framework**: Ensures repaired policies maintain security properties
 - **Cross-Platform**: Works on Windows, Linux, and macOS
 
 ## 📋 Supported Rule Types
@@ -131,7 +129,7 @@ python main.py --input rules.csv --output fixed.csv --verbose --debug
 ## 📁 Project Structure
 
 ```
-acp-analyzer/
+graph-acp-llm-analysis/
 ├── 📁 policy_preprocessing/     # Policy normalization and parsing
 │   ├── policy_preprocessing.py
 │   ├── Policy.py
@@ -199,18 +197,6 @@ R10: grant create on relationships (r:REPORTS_TO) where r.level > 3 to member;
 # Repair: Rule removed - cannot create inaccessible entities
 ```
 
-## 🧪 Testing & Validation
-
-```bash
-# Run unit tests
-python -m pytest tests/ -v
-
-# Run integration tests
-python tests/integration_test.py
-
-# Validate repaired policies
-python validate.py --input repaired_policies/ --expected expected_policies/
-```
 
 
 
@@ -219,8 +205,6 @@ python validate.py --input repaired_policies/ --expected expected_policies/
 
 **Project Maintainer**: Adil Ber  
 **Email**: [adil.bereksi@gmail.com](mailto:adil.bereksi@gmail.com)  
-**GitHub Issues**: [Report a Bug](https://github.com/adil-ber/acp-analyzer/issues)  
-**Documentation**: [Wiki](https://github.com/adil-ber/acp-analyzer/wiki)
 
 ---
 

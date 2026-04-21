@@ -1,0 +1,258 @@
+Rule order is irrelevant
+Deny overrides grant
+
+{{decision}} in (grant, deny)
+{{element_type}} in (nodes, relationships)
+{{element_action}} in (Traverse, Create, Delete)
+{{attribute_action}} in (add, modify, remove)
+{{conditions}} in the form {{variable}}.{{attribute}}.... (>,>=,<>,...)
+
+
+Element-level consistency violations:
+
+**Violation_type1** (Element level -  Modify attribute):
+- {{decision}} {{element_action}} on {{element_type}} ({{variable}}:{{label}}) where {{conditions}} to {{role}}
+- grant {{attribute_action}}{`{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+
+
+Repair Strategy of Violation_type1:
+Possibility to bypass the rule: {{decision}} {{element_action}} on {{element_type}} ({{variable}}:{{label}}) where {{conditions}} to {{role}}
+To fix it, remove the rule: grant {{attribute_action}}{`{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+
+
+**Violation_type2** (Element level - Modify wildcard *):
+- {{decision}} {{element_action}} on {{element_type}} ({{variable}}:{{label}}) where {{conditions}} to {{role}}
+- grant {{attribute_action}}{*} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+
+
+Repair Strategy of Violation_type2:
+Possibility to bypass the rule: {{decision}} {{element_action}} on {{element_type}} ({{variable}}:{{label}}) where {{conditions}} to {{role}}
+To fix it, add the rule: deny {{attribute_action}}{`{{attribute}}`} on {{element_type}} to {{role}}
+
+
+attribute-level consistency violations:
+
+**Violation_type3** (Attribute level - Modify wildcard *):
+- deny modify{*} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+- grant add{* | `{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+- grant remove{* | `{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+
+
+Repair Strategy of Violation_type3:
+Possibility to bypass the rule: deny modify{*} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+To fix it, remove the rule: grant add{* | `{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+
+
+**Violation_type4** (Attribute level - Modify wildcard *):
+- deny modify{*} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+- grant add{* | `{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+- grant remove{* | `{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+
+
+Repair Strategy of Violation_type4:
+Possibility to bypass the rule: deny modify{`{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+To fix it, remove the rule: grant add{* | `{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You are an expert in access-control policy analysis.
+
+Your task is to generate a comprehensive benchmark dataset covering all violation templates (Violation_type1–Violation_type4) based on the rules and constraints defined below.
+
+GLOBAL SEMANTICS
+- Rule order is irrelevant
+- Deny overrides grant
+- {{decision}} ∈ {grant, deny}
+- {{element_type}} ∈ {nodes, relationships}
+- {{element_action}} ∈ {Traverse, Create, Delete}
+- {{attribute_action}} ∈ {add, modify, remove}
+- {{conditions}} must follow the form:
+  {{variable}}.{{attribute}} <operator> <value>
+  where <operator> ∈ {>, >=, <, <=, =, <>}
+
+OBJECTIVE
+
+Generate a benchmark consisting of approximately 30 total rules distributed across all violation types.
+
+For EACH violation type (Violation_type1–Violation_type4):
+
+1. Generate multiple independent benchmark cases.
+2. Each benchmark case must:
+   - Fully instantiate all placeholders (no {{}} left).
+   - Explicitly show:
+     - The conflicting rules
+     - The violation type
+     - A clear explanation of the conflict
+     - Why it qualifies as that violation type
+     - The repair strategy
+3. Ensure diversity in:
+   - Roles
+   - Labels
+   - Attributes
+   - Conditions
+   - Element types
+   - Actions
+4. Respect global semantics (deny overrides grant).
+5. Avoid duplicate or near-identical rule sets.
+
+--------------------------------------------------
+VIOLATION TEMPLATES
+--------------------------------------------------
+
+Violation_type1 (Element-level – Modify specific attribute)
+
+Pattern:
+- {{decision}} {{element_action}} on {{element_type}} ({{variable}}:{{label}}) where {{conditions}} to {{role}}
+- grant {{attribute_action}} {`{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+
+Repair Strategy:
+- Bypass possibility: the element-level rule allows indirect modification.
+- Fix: remove the grant {{attribute_action}}{attribute} rule.
+
+
+Violation_type2 (Element-level – Modify wildcard *)
+
+Pattern:
+- {{decision}} {{element_action}} on {{element_type}} ({{variable}}:{{label}}) where {{conditions}} to {{role}}
+- grant {{attribute_action}} {*} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+
+Repair Strategy:
+- Bypass possibility: wildcard attribute modification bypasses element-level restriction.
+- Fix add the rule: deny {{attribute_action}}{`specific_attribute`} on {{element_type}} to {{role}}.
+
+
+Violation_type3 (Attribute-level – Wildcard modify conflict)
+
+Pattern:
+- deny modify {*} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+- grant add {* | `{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+- grant remove {* | `{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+
+Repair Strategy:
+- Bypass possibility: add/remove enables indirect modification despite deny modify {*}.
+- Fix add the rule: deny add {* | `{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+
+
+Violation_type4 (Attribute-level – Specific attribute conflict)
+
+Pattern:
+- deny modify {`{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+- grant add {* | `{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+- grant remove {* | `{{attribute}}`} on {{element_type}} ({{variable}}:{{label}}) to {{role}}
+
+Repair Strategy:
+- Bypass possibility: add/remove on the same attribute bypasses deny modify.
+- Fix: remove the conflicting grant rule.
+
+--------------------------------------------------
+REQUIRED OUTPUT FORMAT
+--------------------------------------------------
+
+For each benchmark case:
+
+Benchmark_ID: Bx
+
+Violation_Type: Violation_typeN
+
+Rules:
+1. ...
+2. ...
+3. ...
+
+Conflict Explanation:
+...
+
+Why This Is a Violation:
+...
+
+Repair Strategy:
+- Identified bypass:
+- Required fix:
+
+--------------------------------------------------
+
+Generate enough benchmark cases to reach approximately 30 total rules across all violation types combined.
+
+Ensure high structural clarity, reasoning correctness, and semantic consistency.
+
+
+
+
+
+
+
+
+
+
+
+
+You are an Access Control Policy (ACP) Rule Generator.
+
+Your task is to generate approximately 70 rules that intentionally
+contain bypass inconsistencies.
+
+==================================================
+GLOBAL SEMANTICS
+==================================================
+
+- Rule order is irrelevant.
+- Deny overrides grant.
+- decision ∈ {grant, deny}
+- element_type ∈ {nodes, relationships}
+- element_action ∈ {Traverse, Create, Delete}
+- attribute_action ∈ {add, modify, remove}
+- Conditions follow:
+  variable.attribute <operator> value
+  where <operator> ∈ {>, >=, <, <=, =, <>}
+
+==================================================
+SUPPORTED ANOMALY TYPES
+==================================================
+
+You must generate rules according to ONLY these two bypass patterns:
+
+1) Element_Condition_Bypass
+
+Occurs when:
+- An element-level rule contains a condition on attribute A
+AND
+- A grant add/remove/modify{A} exists
+  OR grant add/remove/modify{*} exists
+
+Repair:
+- If specific attribute → remove the grant rule
+- If wildcard → add deny rule for attribute A
+
+
+2) Modify_Bypass_AddRemove
+
+Occurs when:
+- deny modify{A} OR deny modify{*}
+AND
+- grant add{A or *}
+AND
+- grant remove{A or *}
+
+Repair:
+- If add is specific → remove the grant add rule
+- If add

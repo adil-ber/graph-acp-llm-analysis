@@ -1,0 +1,120 @@
+rule_id,rule_text
+R1,grant create on nodes (e:Employee) to Role_NoTraverse_Creator,remove grant create
+R2,grant create on nodes (e:Project) to Role_NoTraverse_Creator,remove grant create
+R3,grant create on relationships (r:FRIEND_OF) to Role_NoTraverse_Creator,remove grant create
+R4,grant create on nodes (e:Invoice) where e.amount > 1000 to Role_NoTraverse_Creator,remove grant create
+R5,grant create on relationships (r:OWNS) where r.since > 2000 to Role_NoTraverse_Creator,remove grant create
+R6,grant create on nodes (*) to Role_NoTraverse_Creator,remove grant create
+R7,grant create on nodes (e:Document) to Role_DenyTraverse_Label,add deny create on nodes (e:Document)
+R8,grant traverse on nodes (e:Document) to Role_DenyTraverse_Label,no repair
+R9,deny traverse on nodes (e:Document) to Role_DenyTraverse_Label,no repair
+R10,grant create on relationships (r:OWNS) to Role_DenyTraverse_Label,add deny create on relationships (r:OWNS)
+R11,grant traverse on relationships (*) to Role_DenyTraverse_Label,no repair
+R12,deny traverse on relationships (r:OWNS) to Role_DenyTraverse_Label,no repair
+R13,grant create on relationships (*) to Role_DenyTraverse_All,remove grant create
+R14,grant traverse on relationships (r:CONNECTED) to Role_DenyTraverse_All,no repair
+R15,deny traverse on relationships (*) to Role_DenyTraverse_All,no repair
+R16,grant create on nodes (*) where e.level < 5 to Role_DenyTraverse_All,remove grant create
+R17,grant traverse on nodes (e:Project) to Role_DenyTraverse_All,no repair
+R18,deny traverse on nodes (*) to Role_DenyTraverse_All,no repair
+R19,grant create on nodes (*) to Role_LimitedTraverse,remove wildcard create + add grant create on traversable label
+R20,grant traverse on nodes (e:Employee) to Role_LimitedTraverse,no repair
+R21,grant create on relationships (*) to Role_LimitedTraverse,remove wildcard create + add grant create on traversable label
+R22,grant traverse on relationships (r:WORKS_ON) where r.year > 2020 to Role_LimitedTraverse,no repair
+R23,grant traverse on nodes (e:Asset) to Role_NoTraverse_Creator,no repair
+R24,grant create on nodes (e:Asset) to Role_NoTraverse_Creator,no repair
+R25,deny traverse on nodes (e:Secret) to Role_DenyTraverse_All,no repair
+R26,grant add{email} on nodes (u:Account) where u.owner = true to ProfileEditor | ok
+R27,grant read{email} on nodes (u:Account) to ProfileEditor | OK | Repair: none
+R28,grant add{phone} on relationships (u:HAS_CONTACT) to ContactManager | Violation_type1 | Repair: remove
+R29,grant add{address} on nodes (u:Account) where u.owner = true to AddressEditor | Violation_type2 | Repair: remove
+R30,grant read{address} on nodes (u:Account) to AddressEditor | OK | Repair: none
+R31,deny read{*} on nodes (u:Account) to AddressEditor | OK | Repair: none
+R32,grant add{diagnosis} on nodes (p:MedicalFile) where p.assignedDoctor = true to Doctor | Violation_type3 | Repair: add deny
+R33,grant read{diagnosis} on nodes (p:MedicalFile) to Doctor | OK | Repair: none
+R34,deny read{diagnosis} on nodes (p:MedicalFile) to Doctor | OK | Repair: none
+R35,grant add{*} on relationships (o:Purchase) where o.ownerId = user.id to OrderManager | Violation_type4 | Repair: replace
+R36,grant read{status} on relationships (o:Purchase) to OrderManager | OK | Repair: none
+R37,grant create on nodes (e:Employee) where e.age > 60 AND e.age < 18 to Role_Unsat_Direct | TYPE: UNSAT
+R38,grant create on nodes (e:Employee) where e.status = "active" AND e.status = "inactive" to Role_Unsat_Direct | TYPE: UNSAT
+R39,grant create on nodes (e:Employee) where false to Role_Unsat_Direct | TYPE: UNSAT
+R40,grant create on nodes (e:Employee) where e.salary > 5000 AND e.salary <= 5000 to Role_Unsat_Direct | TYPE: UNSAT
+R41,grant create on nodes (p:Project) where p.budget > 10000 AND p.budget < 5000 to Role_Unsat_Complex | TYPE: UNSAT
+R42,grant create on nodes (p:Project) where p.startYear >= 2025 AND p.startYear < 2020 to Role_Unsat_Complex | TYPE: UNSAT
+R43,grant create on nodes (p:Project) where p.active = true AND p.active = false to Role_Unsat_Complex | TYPE: UNSAT
+R44,grant create on nodes (p:Project) where p.phase = "init" AND p.phase != "init" to Role_Unsat_Complex | TYPE: UNSAT
+R45,grant create on nodes (i:Invoice) where i.amount > 1000 to Role_Redundant_Numeric | TYPE: REDUNDANT
+R46,grant create on nodes (i:Invoice) where i.amount > 500 to Role_Redundant_Numeric | TYPE: SAT
+R47,grant create on nodes (i:Invoice) where i.amount > 2000 to Role_Redundant_Numeric | TYPE: REDUNDANT
+R48,grant create on nodes (u:User) where u.age = 30 to Role_Redundant_Equality | TYPE: REDUNDANT
+R49,grant create on nodes (u:User) where u.age >= 18 AND u.age <= 65 to Role_Redundant_Equality | TYPE: SAT
+R50,grant create on nodes (u:User) where u.age >= 25 AND u.age <= 40 to Role_Redundant_Equality | TYPE: REDUNDANT
+R51,grant create on nodes (o:Order) where o.status = "paid" AND o.amount > 100 to Role_Redundant_Conjunction | TYPE: REDUNDANT
+R52,grant create on nodes (o:Order) where o.status = "paid" to Role_Redundant_Conjunction | TYPE: SAT
+R53,grant create on nodes (o:Order) where o.status = "paid" AND o.amount > 500 to Role_Redundant_Conjunction | TYPE: REDUNDANT
+R54,grant create on nodes (a:Asset) where a.value > 1000 to Role_Mixed_Irrelevant | TYPE: REDUNDANT
+R55,grant create on nodes (a:Asset) where a.value > 500 to Role_Mixed_Irrelevant | TYPE: SAT
+R56,grant create on nodes (a:Asset) where a.value < 0 AND a.value > 100 to Role_Mixed_Irrelevant | TYPE: UNSAT
+R57,grant create on nodes (d:Document) where d.confidential = false to Role_True_Strongest | TYPE: REDUNDANT
+R58,grant create on nodes (d:Document) where true to Role_True_Strongest | TYPE: SAT
+R59,grant create on nodes (d:Document) where d.owner = "admin" to Role_True_Strongest | TYPE: REDUNDANT
+R60,grant create on nodes (e:Employee) where e.age >= 18 AND e.age <= 18 to Role_Adversarial_NearUnsat | TYPE: SAT
+R61,grant create on nodes (e:Employee) where e.level > 3 AND e.level >= 4 to Role_Adversarial_NearUnsat | TYPE: SAT
+R62,grant create on nodes (e:Employee) where e.salary != 5000 AND e.salary > 5000 to Role_Adversarial_NearUnsat | TYPE: SAT
+R63,grant create on nodes (i:Invoice) where i.amount > 1000 to Role_Adversarial_Boundary | TYPE: REDUNDANT
+R64,grant create on nodes (i:Invoice) where i.amount >= 1000 to Role_Adversarial_Boundary | TYPE: SAT
+R65,grant create on nodes (i:Invoice) where i.amount >= 2000 to Role_Adversarial_Boundary | TYPE: REDUNDANT
+R66,grant create on nodes (o:Order) where o.status = "paid" AND o.amount > 0 to Role_Adversarial_Conjunction | TYPE: REDUNDANT
+R67,grant create on nodes (o:Order) where o.status = "paid" to Role_Adversarial_Conjunction | TYPE: SAT
+R68,grant create on nodes (o:Order) where o.status = "paid" AND o.amount > 1000 to Role_Adversarial_Conjunction | TYPE: REDUNDANT
+R69,grant create on nodes (a:Asset) where a.value > 150 to Role_Adversarial_Gap | TYPE: REDUNDANT
+R70,grant create on nodes (a:Asset) where a.value > 100 to Role_Adversarial_Gap | TYPE: SAT
+R71,grant create on nodes (a:Asset) where a.value > 120 to Role_Adversarial_Gap | TYPE: REDUNDANT
+R72,grant create on nodes (p:Project) where p.year > 2024 AND p.year < 2024 to Role_Adversarial_AlmostUnsat | TYPE: UNSAT
+R73,grant create on nodes (p:Project) where p.year >= 2024 AND p.year <= 2024 to Role_Adversarial_AlmostUnsat | TYPE: SAT
+R74,grant create on nodes (c:Customer) where c.score > 80 to Role_Redundant_Score | TYPE: REDUNDANT
+R75,grant create on nodes (c:Customer) where c.score > 50 to Role_Redundant_Score | TYPE: SAT
+R76,grant create on nodes (c:Customer) where c.score > 90 to Role_Redundant_Score | TYPE: REDUNDANT
+R77,grant create on nodes (t:Task) where t.priority = "high" AND t.priority = "low" to Role_Unsat_Task | TYPE: UNSAT
+R78,grant create on nodes (t:Task) where t.priority = "high" to Role_Unsat_Task | TYPE: SAT
+R79,grant create on nodes (b:Book) where b.pages > 0 AND b.pages >= 1 to Role_Adversarial_Book | TYPE: REDUNDANT
+R80,grant create on nodes (b:Book) where b.pages >= 1 to Role_Adversarial_Book | TYPE: SAT
+R81,grant create on nodes (s:Server) where s.load >= 70 AND s.load <= 90 to Role_Range | TYPE: REDUNDANT
+R82,grant create on nodes (s:Server) where s.load >= 0 AND s.load <= 100 to Role_Range | TYPE: SAT
+R83,grant create on nodes (s:Server) where s.load > 200 to Role_Range | TYPE: SAT
+R84,grant create on nodes (x:Example) where x.value > 10 AND x.value < 5 to Role_Final_Unsat | TYPE: UNSAT
+R85,grant create on nodes (x:Example) where x.value > 10 to Role_Final_Unsat | TYPE: SAT
+R86,grant create on nodes (x:Example) where x.value > 20 to Role_Final_Unsat | TYPE: REDUNDANT
+R87,grant create on nodes (e:Player) to B
+R88,grant traverse on nodes (e:Player) to B
+R89,deny traverse on nodes (e:Player) where v.score > 85 to B | add deny create where
+R90,grant delete on nodes (d:Document) where d.status = archived to Editor | Violation_type1
+R91,grant modify{status} on nodes (d:Document) to Editor | Violation_type1
+R92,deny traverse on relationships (r:OWNS) where r.active = false to Manager | Violation_type1
+R93,grant remove{active} on relationships (r:OWNS) to Manager | Violation_type1
+R94,grant create on nodes (u:User) where u.level >= 5 to Supervisor | Violation_type1
+R95,grant add{level} on nodes (u:User) to Supervisor | Violation_type1
+R96,grant create on nodes (p:Post) where p.visibility = private to Moderator | Violation_type2
+R97,grant modify{*} on nodes (p:Post) to Moderator | Violation_type2
+R98,grant traverse on nodes (a:Account) where a.balance <= 0 to Auditor | Violation_type2
+R99,grant modify{*} on nodes (a:Account) to Auditor | Violation_type2
+R100,grant delete on relationships (t:TRANSFER) where t.amount > 10000 to Compliance | Violation_type2
+R101,grant modify{*} on relationships (t:TRANSFER) to Compliance | Violation_type2
+R102,deny modify {} on nodes (e:Employee) to HR_Assistant | Violation_type3
+R103,grant add {} on nodes (e:Employee) to HR_Assistant | Violation_type3
+R104,grant remove {*} on nodes (e:Employee) to HR_Assistant | Violation_type3
+R105,deny modify {} on relationships (r:REPORTS_TO) to Analyst | Violation_type3
+R106,grant add {} on relationships (r:REPORTS_TO) to Analyst | Violation_type3
+R107,grant remove {*} on relationships (r:REPORTS_TO) to Analyst | Violation_type3
+R108,deny modify {*} on nodes (c:Customer) to Support | Violation_type3
+R109,grant add {phone} on nodes (c:Customer) to Support | Violation_type3
+R110,grant remove {phone} on nodes (c:Customer) to Support | Violation_type3
+R111,deny modify {salary} on nodes (e:Employee) to Payroll_Clerk | Violation_type4
+R112,grant add {salary} on nodes (e:Employee) to Payroll_Clerk | Violation_type4
+R113,grant remove {salary} on nodes (e:Employee) to Payroll_Clerk | Violation_type4
+R114,deny modify {credit_limit} on nodes (a:Account) to Bank_Teller | Violation_type4
+R115,grant add {credit_limit} on nodes (a:Account) to Bank_Teller | Violation_type4
+R116,grant remove {credit_limit} on nodes (a:Account) to Bank_Teller | Violation_type4
+R117,deny modify {role} on nodes (u:User) to IT_Support | Violation_type4
+R118,grant add {role} on nodes (u:User) to IT_Support | Violation_type4
+R119,grant remove {role} on nodes (u:User) to IT_Support | Violation_type4

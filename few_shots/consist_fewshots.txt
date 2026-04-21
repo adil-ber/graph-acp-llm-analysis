@@ -1,0 +1,67 @@
+### Few-shot Example 1 (An element-level rule contains a condition on a specific attribute and rule exists for that same specific attribut)
+
+INPUT:
+
+('nodes', 'Invoice', 'Accountant')
+R1: grant create on nodes (e:Invoice) where e.total < 10000 to Accountant;
+R2: grant add{total} on nodes (e:Invoice) to Accountant;
+R3: grant remove{date} on nodes (e:Invoice) to Accountant;
+
+OUTPUT:
+
+{
+  "to remove": {
+    "R2": "R1 can be bypassed using R2",
+    "R3": "R1 can be bypassed using R3",
+  }
+}
+
+### Few-shot Example 2 (An element-level rule contains a condition on a specific attribute and rule exists for wildcard (*))
+
+INPUT:
+
+('nodes', 'Invoice', 'Accountant')
+R3: deny create on nodes (e:Invoice) where e.total < 10000 to Accountant;
+R4: grant modify{*} on nodes (e:Invoice) to Accountant;
+
+OUTPUT:
+
+{
+  "to add": {
+    "R11": "deny modify{total} on nodes (e:Invoice) to Accountant;
+  }
+}
+
+### Few-shot Example 3 ('modify' bypassed by 'remove' and 'add' specific attribute A)
+
+INPUT:
+
+('relationships', 'OWNS', 'Admin')
+R5: deny modify{since} on relationships (r:OWNS) to Admin;
+R6: grant add{since} on relationships (r:OWNS) to Admin;
+R7: grant remove{*} on relationships (r:OWNS) to Admin;
+
+OUTPUT:
+
+{
+  "to remove": {
+    "R6":"R5 can be bypassed using R6 and R7"
+  }
+}
+
+### Few-shot Example 4 ('modify' bypassed by 'remove' and 'add' wildcard *)
+
+INPUT:
+
+('nodes', 'Patient', 'Doctor')
+R8: deny modify{age} on nodes (r:Patient) to Doctor;
+R9: grant add{*} on nodes (r:Patient) to Doctor;
+R10: grant remove{*} on nodes (r:Patient) to Doctor;
+
+OUTPUT:
+
+{
+  "to add": {
+    "R12":"deny add{age} on nodes (r:Patient) to Doctor;"
+  }
+}

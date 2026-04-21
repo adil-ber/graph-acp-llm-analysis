@@ -1,1 +1,9 @@
 config.py
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Caches inside subdirectories
+**/__pycache__/
